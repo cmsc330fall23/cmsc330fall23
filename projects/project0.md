@@ -88,7 +88,8 @@ First, you will need to clone this repository to your local filesystem. To do th
 Then run:
 
 ```
-git clone https://github.com/cmsc330-summer23/project-0-<github-username>
+# heres the template, make sure to set the owner as yourself and NOT umd-cmsc330 https://github.com/new?owner=umd-cmsc330&template_name=project-0
+git clone https://github.com/THE REPO YOU CLONED FROM THE TEMPLATE
 ```
 
 The files in the `project-0` folder will be used for the [Verifying Setup](#verifying-setup) section at the bottom.
