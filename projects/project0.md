@@ -85,11 +85,10 @@ First, you will need to clone this repository to your local filesystem. To do th
    - [mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac&tool=webui#adding-a-new-ssh-key-to-your-account)
    - [linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux&tool=webui#adding-a-new-ssh-key-to-your-account)
 
-Then run:
+Then (after modifying the command with your username) run:
 
 ```
-# heres the template, make sure to set the owner as yourself and NOT umd-cmsc330 https://github.com/new?owner=umd-cmsc330&template_name=project-0
-git clone https://github.com/THE REPO YOU CLONED FROM THE TEMPLATE
+git clone git@github.com:cmsc330fall23/project-0-YOUR_GITHUB_USERNAME
 ```
 
 The files in the `project-0` folder will be used for the [Verifying Setup](#verifying-setup) section at the bottom.
