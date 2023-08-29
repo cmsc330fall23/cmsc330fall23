@@ -20,6 +20,7 @@ This project is simply to get your system ready. Although you will "submit" this
 - [Troubleshooting `gradescope-submit`](#troubleshooting-gradescope-submit)
   - [Incorrect Passwords](#incorrect-passwords)
   - [HTTP Errors](#http-errors)
+  - [Failed Gradescope Compilation](#failed-gradescope-compilation)
 - [Special macOS Instructions](#special-macos-instructions)
   - [Do you have a Mac running an older version of macOS?](#do-you-have-a-mac-running-an-older-version-of-macos)
 
@@ -95,7 +96,7 @@ The files in the `project-0` folder will be used for the [Verifying Setup](#veri
 
 The following sections will help you install the necessary packages and programs on your operating system.  Some steps may take a long time. Please be patient.  **Read all instructions very carefully.**
 
-The output of each command is important, so please pay careful attention to what each one prints.  If you encounter an error message, **do not ignore it**.  We will be available in office hours to help you get set up if you run into problems.  As a general rule, no output means the command executed successfully.
+The output of each command is important, so please pay careful attention to what each one prints. **Do not ignore error messages**.  We will be available in office hours to help you get set up if you run into problems.  As a general rule, no output means the command executed successfully.
 
 **Please skip to the section below that corresponds with your operating system.**
 
@@ -125,7 +126,7 @@ The output of each command is important, so please pay careful attention to what
 6. Initialize OCaml
     - Run `opam update`
     - We will be using OCaml version 4.13.X. Run `ocaml -version` to check which version is currently installed
-    - If you are already on 4.13.X, you can skip to #6
+    - If you are already on 4.13.X, you can skip to #7
     - If you are on another version, run `opam switch 4.13.0`
     - If you get an error saying that switch is not currently installed, run `opam switch create 4.13.0`. (This may take a while. Please be patient)
       - While installing the new switch, if you get an error for `bwrap`, first remove the `.opam` directory using `rm -r ~/.opam` and then reinitialize opam by **disabling sanboxing** using `opam init --disable-sandboxing`. Type "n" when prompted to modify `~/.profile`. Once opam has been initialized, rerun `opam switch create 4.13.0`
@@ -151,9 +152,9 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
 
 1. Install the Homebrew package manager (Updated in Fall 2021)
     - Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-2. Check your Python version by running `python3 --version`.  If it's older than 3.8,
-   you'll need to install a newer version using `brew install python3`. Otherwise, skip to step 3.
-    - If you needed to install a newer version, restart your terminal after the installation has completed and type `python3 --version` again to confirm that you now have a newer version.
+2. Install python
+    - Run `brew install python3`
+    - Restart your terminal after the installation has completed and type `python3 --version`. Confirm it is 3.8 or higher
 3. Install the basic dependencies
     - Run `brew install ocaml opam openssl`
 4. Install some Pip packages for testing
@@ -244,11 +245,11 @@ The `submit` command will pull your code from GitHub, not your local files. If y
 
 To verify that you have the correct versions installed, run 
 `pytest test/public/public.py` in this directory.  You should not get any errors.  
-This will create a file called p0.report.  Push your changes onto github. Then, submit this file by running `submit` in 
+This will create a file called p0.report.  **Push your changes onto github.** Then, submit this file by running `submit` in 
 the project folder.  You will have to enter your credentials.  Alternatively, you can manually submit 
 the file to Gradescope by uploading the p0.report file to the appropriate assignment.
 
-## Troubleshooting `gradescope-submit`
+## Troubleshooting `submit`
 
 ### Incorrect Passwords 
 
@@ -264,6 +265,10 @@ we suggest you to merge them before trying to submit by the program.
 Remove the `gradescope-submit` config file by doing
 `rm -r ~/.gradescope-submit`. Then, refer to the troubleshooting for incorrect
 passwords and try it again.
+
+### Failed Gradescope Compilation
+
+You didnt push your changes to github...
 
 
 ## Special macOS Instructions
