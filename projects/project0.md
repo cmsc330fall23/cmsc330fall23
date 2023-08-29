@@ -81,16 +81,25 @@ For future projects you will select `open folder` to open the linux folder conta
 First, [create your project repository](https://classroom.github.com/a/1Plgv8Fw) - you will have to do this for every project
 
 Next, you will need to clone this repository to your local filesystem. To do this, you will first need to make a SSH key to authenticate with github. 
-**If you are on windows, do the key setup and clone in WSL, using the Linux instructions**
-1. Generate an SSH key. These are local to each computer and you must make a new one on every computer you work off of. If you already have an old key, make sure it is not `id_rsa`. If this is the case you will need to generate a new `id_ed25519` key.
-   - [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#generating-a-new-ssh-key)
-   - [Linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key)
-2. Add the SSH key to your github account
-   - [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac&tool=webui#adding-a-new-ssh-key-to-your-account)
-   - [Linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux&tool=webui#adding-a-new-ssh-key-to-your-account)
+**If you are on windows, do the key setup and clone in WSL. NOT in Powershell**
+1. Open Terminal
+2. Paste `ssh-keygen -t ed25519 -C "your_email@example.com"`, substituting your github email address
+3. When you're prompted to "Enter a file in which to save the key", you can **press Enter to accept the default file location**. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key. If this is the case, press `ctrl + c` to cancel the generation, you already have a key.
+4. At the prompt, type a secure passphrase. I prefer something short - you will be typing this a lot. A weak password is a hell of a lot better than no password.
+
+You have now created a public/private key pair located at `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub`
+Next we will add your public key to your github account
+
+5. Run `cat ~/.ssh/id_ed25519.pub` and copy the public key that is displayed.
+6. Go to [https://github.com/settings/keys](https://github.com/settings/keys)
+7. Click "Add a new SSH key"
+8. Paste in your copied public key, it should look similar to `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO891GqdwqFqYA3UF3JbMQeOqn6hQGa2nJERrONqvi9h aspr@umd.edu`
+9. Add the key. You can now authenticate this computer to GitHub using SSH. 
+ 
+Optional: If you dont want to type the password every time you push/pull [Use `ssh-add` to add the key to the ssh agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?#adding-your-ssh-key-to-the-ssh-agent) If you are on windows, use the Linux instructions in WSL. Do not continue to the hardware security key section.
+
 
 Then (after modifying the command with your username) run:
-
 ```
 git clone git@github.com:cmsc330fall23/project-0-YOUR_GITHUB_USERNAME
 ```
