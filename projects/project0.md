@@ -1,6 +1,6 @@
 # Project 0: Setup
 
-Due: June 1, 2023 at 11:59 PM
+Due: September 2, 2023 at 11:59 PM
 
 This project is simply to get your system ready. Although you will "submit" this project on Gradescope, it is not counted towards your final grade.  The good-faith attempt (GFA) rule **does not apply** to this project.
 
@@ -27,7 +27,7 @@ This project is simply to get your system ready. Although you will "submit" this
 
 ## Languages and Packages
 
-In this course, we will be programming in Python, OCaml and Rust.  Below is a summary of the packages that need to be installed.  You do not need to use these links, they are just for reference or learning more about the languages and/or packages.  You can skip below to the instructions.
+In this course, we will be programming in Python, OCaml, Rust, and Racket.  Below is a summary of the packages that need to be installed.  You do not need to use these links, they are just for reference or learning more about the languages and/or packages.  You can skip below to the instructions.
 
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org)
@@ -42,7 +42,7 @@ In this course, we will be programming in Python, OCaml and Rust.  Below is a su
 
 ## Visual Studio Code
 
-There is no required text editor/IDE for this course, however, instructors are familiar with [VS Code](https://code.visualstudio.com/download) so we reccomend it.
+There is no required text editor/IDE for this course, however, instructors are familiar with [VS Code](https://code.visualstudio.com/download) so we recommend it.
 
 ### Extensions
 
@@ -65,13 +65,13 @@ Here is a short list of some useful extensions, feel free to explore the marketp
  
 ### Windows VSCode setup
 
-It is reccomended to use Vscode on windows because of its integration with WSL. With the wsl extension, you can open a WSL terminal within VSCode.
+It is recommended to use Vscode on Windows because of its integration with WSL. With the WSL extension, you can open a WSL terminal within VSCode.
 1. Install the WSL extension in VSCode
 2. Click the >< icon labeled `Open a remote window` located in the very bottom left corner of the screen.
 3. Select "Connect to WSL" - Now VSCode will be loaded within wsl, it will now be using the linux filesystem and terminal.
 4. Use `` ctrl + ` `` to open a terminal.
-5. create a directory for your 330 projects
-6. clone project 0 into that directory
+5. Create a directory for your 330 projects
+6. Clone project 0 into that directory
 
 For future projects you will select `open folder` to open the linux folder containing the project and edit the files, while using the wsl terminal for compilation, testing, and submitting.
   
@@ -80,11 +80,11 @@ For future projects you will select `open folder` to open the linux folder conta
 First, you will need to clone this repository to your local filesystem. To do this, you will first need to make a SSH key to authenticate with github. 
 **If you are on windows, do the key setup and clone in WSL, FOLLOWING THE LINUX INSTRUCTIONS**
 1. Generate an SSH key. These are local to each computer and you must make a new one on every computer you work off of
-   - [mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#generating-a-new-ssh-key)
-   - [linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key)
+   - [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#generating-a-new-ssh-key)
+   - [Linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key)
 2. Add the SSH key to your github account
-   - [mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac&tool=webui#adding-a-new-ssh-key-to-your-account)
-   - [linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux&tool=webui#adding-a-new-ssh-key-to-your-account)
+   - [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac&tool=webui#adding-a-new-ssh-key-to-your-account)
+   - [Linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux&tool=webui#adding-a-new-ssh-key-to-your-account)
 
 Then (after modifying the command with your username) run:
 
@@ -226,26 +226,26 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu).  If you 
     - Run the installer
     - Racket comes with its own IDE: DrRacket. This is the recommended way to edit Racket files, but you also may use VS Code with Racket extension(s)
 
-## Link Github to Gradescope
+## Link GitHub to Gradescope
 
 Log into your gradescope account and go to your account settings. Scroll down to the `Linked Accounts` section. If you do not already
-have your Github account linked here, click the `Link a GitHub account` button and log into your Github account.
+have your GitHub account linked here, click the `Link a GitHub account` button and log into your GitHub account.
   
 ## How to Submit
 
-Whenever you want to submit your project to gradescope, you will need to push your latest version to your repo. Follow these steps to do so:
+Whenever you want to submit your project to Gradescope, you will need to push your latest version to your repo. Follow these steps to do so:
 
-First, make sure all your changes are pushed to github using the `git add`, `git commit`, and `git push` commands. We will teach you basic git usage in the first few days of the course, but you can refer to [my notes](https://bakalian.cs.umd.edu/assets/notes/git.pdf) for assistance. Additionally you can refer to a [testing repo](https://github.com/CliffBakalian/git-basics) I made, but it's recommended you make your own.
+First, make sure all your changes are pushed to GitHub using the `git add`, `git commit`, and `git push` commands. We will teach you basic git usage in the first few days of the course, but you can refer to [these notes](https://bakalian.cs.umd.edu/assets/notes/git.pdf) for assistance. Additionally you can refer to a [testing repo](https://github.com/CliffBakalian/git-basics) Cliff made, but it's recommended you make your own.
 
 Next, to submit your project, you can run `submit` from your project directory.
 
-The `submit` command will pull your code from GitHub, not your local files. If you do not push your changes to GitHub, they will not be uploaded to gradescope.
+The `submit` command will pull your code from GitHub, not your local files. If you do not push your changes to GitHub, they will not be uploaded to Gradescope.
 
 ## Verifying Setup
 
 To verify that you have the correct versions installed, run 
 `pytest test/public/public.py` in this directory.  You should not get any errors.  
-This will create a file called p0.report.  **Push your changes onto github.** Then, submit this file by running `submit` in 
+This will create a file called p0.report.  **Push your changes onto GitHub.** Then, submit this file by running `submit` in 
 the project folder.  You will have to enter your credentials.  Alternatively, you can manually submit 
 the file to Gradescope by uploading the p0.report file to the appropriate assignment.
 
@@ -257,7 +257,7 @@ Make sure that the email address and password you entered is of the account
 where your CMSC 330 course enrollment shows up. (If you login through "school
 credentials" option and don't remember your **Gradescope** password, please
 reset it.) Many people have multiple Gradescope accounts, and
-we suggest you to merge them before trying to submit by the program.
+we suggest you to merge them before trying to submit.
 
 
 ### HTTP Errors
@@ -268,7 +268,7 @@ passwords and try it again.
 
 ### Failed Gradescope Compilation
 
-You didnt push your changes to github...
+You didnt push your changes to GitHub...
 
 
 ## Special macOS Instructions
