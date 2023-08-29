@@ -231,7 +231,8 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu).  If you 
 
 ## Link GitHub to Gradescope
 
-Log into your gradescope account and go to your account settings. Scroll down to the `Linked Accounts` section. If you do not already
+**IMPORTANT**
+Log into your Gradescope account and go to your account settings. Scroll down to the `Linked Accounts` section. If you do not already
 have your GitHub account linked here, click the `Link a GitHub account` button and log into your GitHub account.
   
 ## How to Submit
@@ -262,10 +263,15 @@ credentials" option and don't remember your **Gradescope** password, please
 reset it.) Many people have multiple Gradescope accounts, and
 we suggest you to merge them before trying to submit.
 
+### Submission failed. Did you connect GitHub to Gradescope?
+
+You didnt connect GitHub to Gradescope. 
+Go to [Gradescope account settings](https://www.gradescope.com/account/edit), and "Link a GitHub account"
+
 
 ### HTTP Errors
 
-Remove the `gradescope-submit` config file by doing
+Remove the `submit` config file by doing
 `rm -r ~/.gradescope-submit`. Then, refer to the troubleshooting for incorrect
 passwords and try it again.
 
