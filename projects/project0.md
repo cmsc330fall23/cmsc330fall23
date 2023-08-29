@@ -65,6 +65,7 @@ Here is a short list of some useful extensions, feel free to explore the marketp
  
 ### Windows VSCode setup
 
+(Do this step after WSL is installed.)
 It is recommended to use Vscode on Windows because of its integration with WSL. With the WSL extension, you can open a WSL terminal within VSCode.
 1. Install the WSL extension in VSCode
 2. Click the >< icon labeled `Open a remote window` located in the very bottom left corner of the screen.
@@ -77,9 +78,11 @@ For future projects you will select `open folder` to open the linux folder conta
   
 ## Instructions
 
-First, you will need to clone this repository to your local filesystem. To do this, you will first need to make a SSH key to authenticate with github. 
+First, [create your project repository](https://classroom.github.com/a/1Plgv8Fw) - you will have to do this for every project
+
+Next, you will need to clone this repository to your local filesystem. To do this, you will first need to make a SSH key to authenticate with github. 
 **If you are on windows, do the key setup and clone in WSL, FOLLOWING THE LINUX INSTRUCTIONS**
-1. Generate an SSH key. These are local to each computer and you must make a new one on every computer you work off of
+1. Generate an SSH key. These are local to each computer and you must make a new one on every computer you work off of. If you already have an old key, make sure it is not `id_rsa`. If this is the case you will need to generate a new `id_ed25519` key.
    - [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#generating-a-new-ssh-key)
    - [Linux](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key)
 2. Add the SSH key to your github account
