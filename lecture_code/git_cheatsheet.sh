@@ -5,7 +5,7 @@ git clone https://github.com/cmsc330fall23/cmsc330fall23.git
 git add README.md
 
 # take a snapshot of the repository
-git commit -m "commected about what has been changed"
+git commit -m "commented about what has been changed"
 
 # push your changes to github
 git push
