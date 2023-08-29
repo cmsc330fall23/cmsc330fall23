@@ -186,6 +186,7 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - Run `eval $(opam env)`
     - Ensure you are now on the correct version by running `ocaml -version`
 7. Install OCaml packages
+    - Run `opam update`
     - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck`
 8. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
