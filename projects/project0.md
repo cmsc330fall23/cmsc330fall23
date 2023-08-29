@@ -93,7 +93,7 @@ Next we will add your public key to your github account
 5. Run `cat ~/.ssh/id_ed25519.pub` and copy the public key that is displayed.
 6. Go to [https://github.com/settings/keys](https://github.com/settings/keys)
 7. Click "Add a new SSH key"
-8. Paste in your copied public key, it should look similar to `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO891GqdwqFqYA3UF3JbMQeOqn6hQGa2nJERrONqvi9h aspr@umd.edu`
+8. Paste in your copied public key, it should look like: `ssh-ed25519 <64 characters of hash> <your email>`
 9. Add the key. You can now authenticate this computer to GitHub using SSH. 
  
 Optional: If you dont want to type the password every time you push/pull [Use `ssh-add` to add the key to the ssh agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?#adding-your-ssh-key-to-the-ssh-agent) If you are on windows, use the Linux instructions in WSL. Do not continue to the hardware security key section.
