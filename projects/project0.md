@@ -1,6 +1,6 @@
 # Project 0: Setup
 
-Due: September 2, 2023 at 11:59 PM
+Due: Sunday, September 3, 2023 at 11:59 PM
 
 This project is simply to get your system ready. Although you will "submit" this project on Gradescope, it is not counted towards your final grade.  The good-faith attempt (GFA) rule **does not apply** to this project.
 
