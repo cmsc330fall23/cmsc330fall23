@@ -259,7 +259,7 @@ The `submit` command will pull your code from GitHub, not your local files. If y
 
 To verify that you have the correct versions installed, run 
 `pytest test/public/public.py` in this directory.  You should not get any errors.  
-This will create a file called p0.report.  **Push your changes onto GitHub.** Then, submit this file by running `submit` in 
+*This will create a file called `p0.report`*.  **Push your changes onto GitHub.** Then, submit this file by running `submit` in 
 the project folder.  You will have to enter your credentials.  Alternatively, you can manually submit 
 the file to Gradescope by uploading the p0.report file to the appropriate assignment.
 
