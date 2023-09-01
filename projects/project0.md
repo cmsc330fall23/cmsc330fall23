@@ -11,10 +11,10 @@ This project is simply to get your system ready. Although you will "submit" this
 - [Languages and Packages](#languages-and-packages)
 - [Visual Studio Code](#visual-studio-code)
   - [Extensions](#extensions)
-  - [Windows VSCode Setup](#windows-vscode-setup)
 - [Instructions](#instructions)
   - [Linux (NOT WSL)](#linux-not-wsl)
   - [Windows](#windows)
+    - [Windows VSCode Setup](#windows-vscode-setup)
   - [macOS](#macos)
 - [Verifying Setup](#verifying-setup)
 - [Troubleshooting `gradescope-submit`](#troubleshooting-gradescope-submit)
@@ -62,26 +62,14 @@ Here is a short list of some useful extensions, feel free to explore the marketp
   - rust-analyzer
 - Racket
   - Magic Racket
- 
-### Windows VSCode setup
 
-(Do this step after WSL is installed.)
-It is recommended to use Vscode on Windows because of its integration with WSL. With the WSL extension, you can open a WSL terminal within VSCode.
-1. Install the WSL extension in VSCode
-2. Click the >< icon labeled `Open a remote window` located in the very bottom left corner of the screen.
-3. Select "Connect to WSL" - Now VSCode will be loaded within wsl, it will now be using the linux filesystem and terminal.
-4. Use `` ctrl + ` `` to open a terminal.
-5. Create a directory for your 330 projects
-6. Clone project 0 into that directory
-
-For future projects you will select `open folder` to open the linux folder containing the project and edit the files, while using the wsl terminal for compilation, testing, and submitting.
   
 ## Instructions
 
 First, [create your project repository](https://classroom.github.com/a/1Plgv8Fw) - you will have to do this for every project
 
 Next, you will need to clone this repository to your local filesystem. To do this, you will first need to make a SSH key to authenticate with github. 
-**If you are on windows, do the key setup and clone in WSL. NOT in Powershell**
+**If you are on windows, do the key setup and clone in WSL. NOT in Powershell/CMD**
 1. Open Terminal
 2. Paste `ssh-keygen -t ed25519 -C "your_email@example.com"`, substituting your github email address
 3. When you're prompted to "Enter a file in which to save the key", you can **press Enter to accept the default file location**. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key. If this is the case, press `ctrl + c` to cancel the generation, you already have a key.
@@ -156,6 +144,18 @@ The output of each command is important, so please pay careful attention to what
     - Go to https://download.racket-lang.org/ and download the Windows (x64, 64-bit) installer
     - Run the installer
     - Racket comes with its own IDE: DrRacket. This is the recommended way to edit Racket files, but you also may use VS Code with Racket extension(s)
+
+#### Windows VSCode setup
+
+It is recommended to use Vscode on Windows because of its integration with WSL. With the WSL extension, you can open a WSL terminal within VSCode.
+1. Install the WSL extension in VSCode
+2. Click the >< icon labeled `Open a remote window` located in the very bottom left corner of the screen.
+3. Select "Connect to WSL" - Now VSCode will be loaded within wsl, it will now be using the linux filesystem and terminal.
+4. Use `` ctrl + ` `` to open a terminal.
+5. Create a directory for your 330 projects
+6. Clone project 0 into that directory
+
+For future projects you will select `open folder` to open the linux folder containing the project and edit the files, while using the wsl terminal for compilation, testing, and submitting.
   
 
 ### macOS
