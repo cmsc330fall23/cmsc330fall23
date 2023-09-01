@@ -164,7 +164,8 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
 
 1. Install the Homebrew package manager (Updated in Fall 2021)
     - Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-    - Try running `brew doctor`, if you see an error message saying "Command not found", run `eval $(/opt/homebrew/bin/brew shellenv)`
+    - Try running `brew doctor`
+      - If you see an error message saying "Command not found", run `echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile` to add brew to PATH variable
 2. Install python
     - Run `brew install python3`
     - Restart your terminal after the installation has completed and type `python3 --version`. Confirm it is 3.8 or higher
