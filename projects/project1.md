@@ -202,7 +202,7 @@ Every `Staff` member should also have the following methods
 
 ## Roster
 
-This will hold all the `Person`s. You should make your own `initialize` method..
+This will hold all the `Person`s. You should make your own `__init__` method..
 
 #### `add(person)`
 - **Description**: Adds the person to the roster. 
