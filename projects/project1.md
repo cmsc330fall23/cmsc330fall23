@@ -17,11 +17,11 @@ Implement the functions below. Ensure each function prototype matches the one we
 - **Hint**: It may be easier to do this after converting the provided integer to a String.
 - **Examples**:
   ```py
-  isPalindrome(0) == true
-  isPalindrome(1) == true
-  isPalindrome(10) == false
-  isPalindrome(101) == true
-  isPalindrome(120210) == false
+  isPalindrome(0) == True
+  isPalindrome(1) == True
+  isPalindrome(10) == False
+  isPalindrome(101) == True
+  isPalindrome(120210) == False
 
 #### `nthmax(n, a)`
 - **Description**: Returns the `n`th largest element in the array `a` or `None` if it does not exist. The largest element is specified using n = 0. Treat duplicated values seperately.
@@ -50,15 +50,15 @@ Implement the functions below. Ensure each function prototype matches the one we
 All code for part 2 should be located the same file for part 1 (`basics.py`).
 
 #### `zipHash(arr1, arr2)`
-- **Description**: Returns a hash that maps corresponding elements in `arr1` and `arr2`, i.e., `arr1[i]` maps to `arr2[i]`, for all i. If the two arrays are not the same length, return `None`.
-- **Type**: `(Array, Array) -> Hash or None`
+- **Description**: Returns a dict that maps corresponding elements in `arr1` and `arr2`, i.e., `arr1[i]` maps to `arr2[i]`, for all i. If the two arrays are not the same length, return `None`.
+- **Type**: `(Array, Array) -> Dict or None`
 - **Examples**:
   ```py
   zipHash([], []) == {}
-  zipHash([1], [2]) == {1 => 2}
-  zipHash([1, 5], [2, 4]) == {1 => 2, 5 => 4}
+  zipHash([1], [2]) == {1: 2}
+  zipHash([1, 5], [2, 4]) == {1: 2, 5: 4}
   zipHash([1], [2, 3]) == None
-  zipHash(["Mamat", "Hicks", "Vinnie"], ["prof", "prof", "TA"]) == {"Mamat" => "prof", "Hicks" => "prof", "Vinnie" => "TA"}
+  zipHash(["Mamat", "Hicks", "Vinnie"], ["prof", "prof", "TA"]) == {"Mamat": "prof", "Hicks": "prof", "Vinnie": "TA"}
   ```
 
 #### `hashToArray(hash)`
@@ -67,9 +67,9 @@ All code for part 2 should be located the same file for part 1 (`basics.py`).
 - **Examples**:
   ```py
   hashToArray({}) == []
-  hashToArray({"a" => "b"}) == [["a", "b"]]
-  hashToArray({"a" => "b", 1 => 2}) == [["a", "b"], [1, 2]]
-  hashToArray({"x" => "v", "y" => "w", "z" => "u"}) == [["x", "v"], ["y", "w"], ["z", "u"]]
+  hashToArray({"a": "b"}) == [["a", "b"]]
+  hashToArray({"a": "b", 1: 2}) == [["a", "b"], [1, 2]]
+  hashToArray({"x": "v", "y": "w", "z": "u"}) == [["x", "v"], ["y", "w"], ["z", "u"]]
   ```
 
 #### `maxLambdaChain(init, lambdas)`
@@ -89,9 +89,9 @@ You may assume each lambda has type `Integer -> Integer`.
 - **Type**: `(Integer, Array) -> Integer`
 - **Examples**:
   ```py
-  MaxLambdaChain(2,[(Lambda x : x + 6)]) == 8
-  MaxLambdaChain(2,[(Lambda x : x + 4), (Lambda x : x * 4)]) == 24
-  MaxLambdaChain(-4,  [(Lambda x : x * 4), (Lambda x : x + 3)]) == -1
+  maxLambdaChain(2,[(lambda x: x + 6)]) == 8
+  maxLambdaChain(2,[(lambda x: x + 4), (lambda x: x * 4)]) == 24
+  maxLambdaChain(-4,  [(lambda x: x * 4), (lambda x: x + 3)]) == -1
   ```
 
 ## Part 3: Object Oriented Programming
@@ -106,12 +106,12 @@ need them. All classes should be written in `roster.py`
  and `age` attribute. Every `Person` should also have the following 
  methods
  
-#### `initialize(name,age)`
+#### `__init__(name,age)`
 - **Description**: creates a Person with `name` and `age`. 
 - **Type**: `(String, Integer)-> self`
 - **Examples**:
   ```py
-  Person.new('Cliff',84)
+  Person('Cliff',84)
   ```
 
 #### `getAge`
@@ -119,8 +119,8 @@ need them. All classes should be written in `roster.py`
 - **Type**: `None-> Integer`
 - **Examples**:
   ```py
-  clyff = Person.new('Cliff', 84)
-  clyff.getAge == 84
+  clyff = Person('Cliff', 84)
+  clyff.getAge() == 84
   ```
 
 #### `setAge(x)`
@@ -129,9 +129,9 @@ is valid. Returns `self`
 - **Type**: `Integer -> self`
 - **Examples**:
   ```py
-  clyff = Person.new('Cliff', 84)
+  clyff = Person('Cliff', 84)
   clyff.setAge(42)
-  clyff.getAge == 42
+  clyff.getAge() == 42
   ```
 
 ## Student
@@ -139,12 +139,12 @@ is valid. Returns `self`
 This is a subclass of a `Person`. Each student has a `grade` attribute.
 Every `Student` should also have the following methods
 
-#### `initialize(name,age, grade)`
+#### `__init__(name,age, grade)`
 - **Description**: creates a Student with `name`, `age` and `grade` 
 - **Type**: `(String, Integer, Float)-> self`
 - **Examples**:
   ```py
-  Student.new('Cliff',16,72.5)
+  Student('Cliff',16,72.5)
   ```
 
 #### `getGrade`
@@ -152,8 +152,8 @@ Every `Student` should also have the following methods
 - **Type**: `None-> Float`
 - **Examples**:
   ```py
-  clyff = Student.new('Cliff',16,72.5)
-  clyff.getGrade == 72.5
+  clyff = Student('Cliff',16,72.5)
+  clyff.getGrade() == 72.5
   ```
 
 #### `changeGrade(x)`
@@ -162,9 +162,9 @@ grade is valid. Returns `self`
 - **Type**: `Float-> self`
 - **Examples**:
   ```py
-  clyff = Student.new('Cliff', 84, 50.0)
+  clyff = Student('Cliff', 84, 50.0)
   clyff.changeGrade(42.0)
-  clyff.getGrade == 42.0
+  clyff.getGrade() == 42.0
   ```
 
 ## Staff
@@ -172,12 +172,12 @@ grade is valid. Returns `self`
 This is a subclass of a `Person`. Each staff member has a `position` attribute
 Every `Staff` member should also have the following methods
 
-#### `initialize(name,age, position)`
+#### `__init__(name, age, position)`
 - **Description**: creates a Student with `name`, `age` and `position` 
 - **Type**: `(String, Integer, String)-> self`
 - **Examples**:
   ```py
-  Staff.new('Cliff',16,'Professsor')
+  Staff('Cliff',16,'Professsor')
   ```
 
 #### `getPosition`
@@ -185,8 +185,8 @@ Every `Staff` member should also have the following methods
 - **Type**: `None-> String`
 - **Examples**:
   ```py
-  clyff = Staff.new('Cliff',16,"TA")
-  clyff.getPosition== "TA"
+  clyff = Staff('Cliff',16,"TA")
+  clyff.getPosition() == "TA"
   ```
 
 #### `changePosition(newPosition)`
@@ -195,9 +195,9 @@ Every `Staff` member should also have the following methods
 - **Type**: `String -> self`
 - **Examples**:
   ```py
-  clyff = Staff.new('Cliff', 84, "TA")
+  clyff = Staff('Cliff', 84, "TA")
   clyff.changePosition("Head TA")
-  clyff.getPosition == "Head TA"
+  clyff.getPosition() == "Head TA"
   ```
 
 ## Roster
@@ -209,8 +209,8 @@ This will hold all the `Person`s. You should make your own `initialize` method..
 - **Type**: `Person -> None`
 - **Examples**:
   ```py
-  roster = Roster.new
-  roster.add(Staff.new('Cliff', 84, 'Professor'))
+  roster = Roster()
+  roster.add(Staff('Cliff', 84, 'Professor'))
   ```
 
 #### `size`
@@ -218,10 +218,10 @@ This will hold all the `Person`s. You should make your own `initialize` method..
 - **Type**: `None -> Integer`
 - **Examples**:
   ```py
-  roster = Roster.new
-  roster.size == 0
-  roster.add('Cliff', 84, 'Professor')
-  roster.size == 1
+  roster = Roster()
+  roster.size() == 0
+  roster.add(Person('Cliff', 84, 'Professor'))
+  roster.size() == 1
   ```
 
 #### `remove(Person)`
@@ -230,11 +230,11 @@ in the roster is unique. If the person is not in the roster, do nothing.
 - **Type**: `Person -> None`
 - **Examples**:
   ```py
-  roster = Roster.new
-  clyff = Person.new('Cliff', 84)
+  roster = Roster()
+  clyff = Person('Cliff', 84)
   roster.add(clyff)
   roster.remove(clyff)
-  roster.size == 0
+  roster.size() == 0
   ```
 
 #### `getPerson(name)`
@@ -244,8 +244,8 @@ return None.
 - **Type**: `String-> Person`
 - **Examples**:
   ```py
-  roster = Roster.new
-  cliff = Person.new('Cliff', 84)
+  roster = Roster()
+  cliff = Person('Cliff', 84)
   roster.add(cliff)
   cliff == roster.getPerson('Cliff')
   ```
@@ -256,12 +256,12 @@ every person in the roster. If no codeblock is given, do nothing.
 - **Type**: `None`
 - **Examples**:
   ```py
-  roster = Roster.new
-  roster.add(Person.new('Cliff', 84))
-  roster.add(Person.new('Clyff', 42))
-  roster.map{|person| person.changeAge(52)}
-  roster.getPerson('Cliff').getAge == 52
-  roster.getPerson('Clyff').getAge == 52
+  roster = Roster()
+  roster.add(Person('Cliff', 84))
+  roster.add(Person('Clyff', 42))
+  roster.map(lambda person: person.setAge(52))
+  roster.getPerson('Cliff').getAge() == 52
+  roster.getPerson('Clyff').getAge() == 52
   ```
 
 ## Part 4: Higher Order Functions
