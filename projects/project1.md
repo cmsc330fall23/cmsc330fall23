@@ -114,24 +114,24 @@ need them. All classes should be written in `roster.py`
   Person('Cliff',84)
   ```
 
-#### `getAge`
+#### `get_age`
 - **Description**: Returns the age of the person
 - **Type**: `None-> Integer`
 - **Examples**:
   ```py
   clyff = Person('Cliff', 84)
-  clyff.getAge() == 84
+  clyff.get_age() == 84
   ```
 
-#### `setAge(x)`
+#### `set_age(x)`
 - **Description**: changes the age of the person. You may assume that any age 
 is valid. Returns `self`
 - **Type**: `Integer -> self`
 - **Examples**:
   ```py
   clyff = Person('Cliff', 84)
-  clyff.setAge(42)
-  clyff.getAge() == 42
+  clyff.set_age(42)
+  clyff.get_age() == 42
   ```
 
 ## Student
@@ -147,24 +147,24 @@ Every `Student` should also have the following methods
   Student('Cliff',16,72.5)
   ```
 
-#### `getGrade`
+#### `get_grade`
 - **Description**: Returns the grade of the student 
 - **Type**: `None-> Float`
 - **Examples**:
   ```py
   clyff = Student('Cliff',16,72.5)
-  clyff.getGrade() == 72.5
+  clyff.get_grade() == 72.5
   ```
 
-#### `changeGrade(x)`
+#### `change_grade(x)`
 - **Description**: changes the grade of the student. You may assume that any 
 grade is valid. Returns `self`
 - **Type**: `Float-> self`
 - **Examples**:
   ```py
   clyff = Student('Cliff', 84, 50.0)
-  clyff.changeGrade(42.0)
-  clyff.getGrade() == 42.0
+  clyff.change_grade(42.0)
+  clyff.get_grade() == 42.0
   ```
 
 ## Staff
@@ -180,24 +180,24 @@ Every `Staff` member should also have the following methods
   Staff('Cliff',16,'Professsor')
   ```
 
-#### `getPosition`
+#### `get_position`
 - **Description**: Returns the position of the staff member 
 - **Type**: `None-> String`
 - **Examples**:
   ```py
   clyff = Staff('Cliff',16,"TA")
-  clyff.getPosition() == "TA"
+  clyff.get_position() == "TA"
   ```
 
-#### `changePosition(newPosition)`
+#### `change_position(newPosition)`
 - **Description**: changes the position of the student. You may assume that 
 `newPosition` is always valid. Returns `self`
 - **Type**: `String -> self`
 - **Examples**:
   ```py
   clyff = Staff('Cliff', 84, "TA")
-  clyff.changePosition("Head TA")
-  clyff.getPosition() == "Head TA"
+  clyff.change_position("Head TA")
+  clyff.get_position() == "Head TA"
   ```
 
 ## Roster
@@ -237,7 +237,7 @@ in the roster is unique. If the person is not in the roster, do nothing.
   roster.size() == 0
   ```
 
-#### `getPerson(name)`
+#### `get_person(name)`
 - **Description**: get the person with `name` in the roster. You may assume that
 everyone in the roster has a unique name. If the person is not in the roster, 
 return None.
@@ -247,7 +247,7 @@ return None.
   roster = Roster()
   cliff = Person('Cliff', 84)
   roster.add(cliff)
-  cliff == roster.getPerson('Cliff')
+  cliff == roster.get_person('Cliff')
   ```
 
 #### `map`
@@ -259,9 +259,9 @@ every person in the roster. If no codeblock is given, do nothing.
   roster = Roster()
   roster.add(Person('Cliff', 84))
   roster.add(Person('Clyff', 42))
-  roster.map(lambda person: person.setAge(52))
-  roster.getPerson('Cliff').getAge() == 52
-  roster.getPerson('Clyff').getAge() == 52
+  roster.map(lambda person: person.set_age(52))
+  roster.get_person('Cliff').get_age() == 52
+  roster.get_person('Clyff').get_age() == 52
   ```
 
 ## Part 4: Higher Order Functions
