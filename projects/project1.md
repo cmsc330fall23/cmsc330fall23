@@ -89,9 +89,9 @@ You may assume each lambda has type `Integer -> Integer`.
 - **Type**: `(Integer, Array) -> Integer`
 - **Examples**:
   ```py
-  maxLambdaChain(2,[(lambda x : x + 6)]) == 8
-  maxLambdaChain(2,[(lambda x : x + 4), (lambda x : x * 4)]) == 24
-  maxLambdaChain(-4,  [(lambda x : x * 4), (lambda x : x + 3)]) == -1
+  maxLambdaChain(2,[(lambda x: x + 6)]) == 8
+  maxLambdaChain(2,[(lambda x: x + 4), (lambda x: x * 4)]) == 24
+  maxLambdaChain(-4,  [(lambda x: x * 4), (lambda x: x + 3)]) == -1
   ```
 
 ## Part 3: Object Oriented Programming
