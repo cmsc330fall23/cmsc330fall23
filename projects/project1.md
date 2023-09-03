@@ -251,8 +251,8 @@ return None.
   ```
 
 #### `map`
-- **Description**: Takes in a `Person -> Person` codeblock and applies it to 
-every person in the roster. If no codeblock is given, do nothing.
+- **Description**: Takes in a function of type `Person -> Person` and applies it to 
+every person in the roster.
 - **Type**: `None`
 - **Examples**:
   ```py
