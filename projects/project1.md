@@ -274,7 +274,7 @@ What's the point?
 - Cleaner code
 - Abstraction
 
-Implement the functions below using higher order functions. All code for these functions should be in their own file called `hof.py`. 
+Implement the functions below using higher order functions. All code for these functions should be in their own file called `hof.py`. There are a few function headers inside the src file `hof.py` which are not required, but may be useful for the required functions. The only required functions for the `hof.py` file are the ones listed below. 
 
 ### HOF and Lambda Practice
 
