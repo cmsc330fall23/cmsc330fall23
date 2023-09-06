@@ -6,6 +6,8 @@ This project has four parts. You can do the parts in any order, but it's recomme
 `semipublics`: You don't have the code for these tests, but you know if you are failing them on gradescope.<br>
 `secrets`: You don't have the code, and you don't know if you're failing them until grades are released.<br>
 
+You may *not* import any packages other than `from functools import reduce`.
+
 ## Part 1: Python Basics
 All code for part 1 should be located in a file called `basics.py`. If the file does not have the name `basics.py`, the testing infrastructure will not be able to grade your work. 
 
@@ -87,6 +89,7 @@ of
    + `LC(x)`
 You may assume each lambda has type `Integer -> Integer`.
 - **Type**: `(Integer, Array) -> Integer`
+- **Hint**: There is an elegant recursive solution.
 - **Examples**:
   ```py
   maxLambdaChain(2,[(lambda x: x + 6)]) == 8
@@ -278,9 +281,12 @@ Implement the functions below using higher order functions. All code for these f
 
 ### HOF and Lambda Practice
 
+You are not required to use Higher Order Functions to complete this section, however **it is recommended to practice programming with HOF in mind**. Not doing so will hinder you in further projects.
+
 #### `uniq(lst)`
--    Given a list, returns a list with all duplicate elements removed. Order matters.
-- Examples:
+- **Description**:   Given a list, returns a list with all duplicate elements removed. Order matters.
+- **Hint**: `is_present()` and `count_occ()` may be helpful to implement and use when designing `uniq()`
+- **Examples**:
     ```py
     uniq([1,2,1,2]) == [1,2]
     uniq([4,3,7,6,7]) == [4,3,7,6]
@@ -288,40 +294,40 @@ Implement the functions below using higher order functions. All code for these f
     ```
 
 #### `find_max(matrix)`
-- given a list of lists find the maximum. You may assume the inputs are non-negative ints.
-- Examples:
+- **Description**: given a list of lists find the maximum. You may assume the inputs are non-negative ints.
+- **Examples**:
     ```py
     find_max([[1,2],[3,4],[5,6]]) == 6
     find_max([[1,1],[1],[1]]) == 1
     ```
 
 #### `count_ones(matrix)`
-- given a matrix, count how many 1s are in the matrix
-- Examples:
+- **Description**: given a matrix, count how many 1s are in the matrix
+- **Examples**:
     ```py
     count_ones([[1,1],[1],[1]]) == 4
     count_ones([[],[3],[0]]) == 0
     ```
 
 #### `addgenerator(x)`
-- return a lambda function that adds x to its parameter
-- Examples:
+- **Description**: return a lambda function that adds x to its parameter
+- **Examples**:
     ```py
     addgenerator(4)(5) == 9
     addgenerator(1)(5) == 6
     ```
 
 #### `apply_to_self()`
-- return a lambda function that takes in 2 parameters. The first is an element and the second is a function. The body of the lambda function should add the element to the application of the function to the element. You may assume that the elementis an int
-- Examples:
+- **Description**: return a lambda function that takes in 2 parameters. The first is an element and the second is a function. The body of the lambda function should add the element to the application of the function to the element. You may assume that the elementis an int
+- **Examples**:
     ```py
     apply_to_self()(2,lambda x: x + 1) == 5 # 2 + (2 + 1)
     apply_to_self()(4,lambda x: -x) == 0 # 4 + (-4)
     ```
 
 #### `map2(matrix,f)`
-- write a function that is similar to `map` but works on lists of lists
-- Examples:
+- **Description**: write a function that is similar to `map` but works on lists of lists
+- **Examples**:
     ```py
     map2([[1,2,3],[4,5,6]],lambda x: -x) == [[-1,-2,-3],[-4,-5,-6]]
     map2([[1,2,3],[4,5,6]],lambda x: 0) == [[0,0,0],[0,0,0]]
