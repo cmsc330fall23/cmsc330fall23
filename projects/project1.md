@@ -223,7 +223,7 @@ This will hold all the `Person`s. You should make your own `__init__` method..
   ```py
   roster = Roster()
   roster.size() == 0
-  roster.add(Person('Cliff', 84, 'Professor'))
+  roster.add(Staff('Cliff', 84, 'Professor'))
   roster.size() == 1
   ```
 
