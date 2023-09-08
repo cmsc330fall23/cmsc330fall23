@@ -134,7 +134,7 @@ Returns a list containing all of the matches, or an empty list if none are found
 
 ```python
 matches = re.findall(r"cmsc3[0-9]*", "cmsc216 cmsc250 cmsc330 cmsc351 cmsc451")
-matches # ['cmsc330, cmsc351']
+matches # ['cmsc330', 'cmsc351']
 matches = re.findall(r"cmsc1[0-9]*", "cmsc216 cmsc250 cmsc330 cmsc351 cmsc451")
 matches # []
 ```
