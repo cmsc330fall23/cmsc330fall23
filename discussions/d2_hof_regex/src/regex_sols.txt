@@ -1,0 +1,8 @@
+- Alternates between capital & lowercase letters
+/^[A-Z]?([a-z][A-Z])*[a-z]?$/
+
+- Contains an even number of vowels
+/^([^aouei]*[aouei][^aouei]*[aouei][^aouei]*)*$/
+
+- Has more 7s, 8s, and 9s than 1s, 2s, and 3s
+not possible rip
