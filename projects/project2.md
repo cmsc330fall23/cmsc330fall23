@@ -246,7 +246,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 
   # If there is an incorrect number of arguments to an operator, delete it before moving on.
   # START Methionine SWAP STOP
-  # This should just return "Methionine"
+  # This should just return "Methionine" if reading left to right using prefix notation.
 ```
 
 ## Testing & Submission
