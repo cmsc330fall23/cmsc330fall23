@@ -182,7 +182,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 ```
 
 #### `operate(sequence, eval_name)`
-- **Description**: Given a RNA sequence (with possible noise) and a name of an operation structure, return a RNA sequence having performed all operations on said sequence. If there is no STOP, read until the end of the sequence. If `eval_name` is not valid, return `None`. For DEL and EXCHANGE, if the operator is using infix notation, perform the operation on the next value. Reading the returned string left to right should follow the order in which you processed the string (see last example). Nothing should occur until START is reached. If there are multiple STARTs, continue building from the previous RNA sequence once you see another start (see the 3rd example down below) 
+- **Description**: Given a RNA sequence (with possible noise) and a name of an operation structure, return a RNA sequence having performed all operations on said sequence. If there is no STOP, read until the end of the sequence. If `eval_name` is not valid, return `None`. For DEL and EXCHANGE, if the operator is using infix notation, perform the operation on the next value. Reading the returned string left to right should follow the order in which you processed the string (see last example). Nothing should occur until START is reached. If there are multiple STARTs, continue building from the previous RNA sequence once you see another start (see the 3rd example down below). If an operator does not have the correct number of arguments, delete it before moving on to the rest of the sequence. 
 - **Type**: `str -> str -> str or None`
 - **Assumptions**: 
   - Assume your `read_codons` function was called.
@@ -243,6 +243,10 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
   # get back "Glutamine <- Methionine". Then, we return in the order we read the sequence (right to left), thus returning: "Methionine Glutamine" which
   # would actually be "AUGCAA".
   # When returning the RNA sequence, you should return in this order: "AUGCAA" and NOT "AACGUA"
+
+  # If there is an incorrect number of arguments to an operator, delete it before moving on.
+  # START Methionine SWAP STOP
+  # This should just return "Methionine"
 ```
 
 ## Testing & Submission
