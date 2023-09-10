@@ -57,7 +57,10 @@ Additionally, we have five commands with special effects:
   SWAP: Swaps two amino acids in the chain
 ```
 
-These commands will modify the chain. 
+These commands will modify the chain. These 5 special commands will not operate on each other.
+(For example, reading this chain with a prefix evaluation: "START DEL SWAP Methionine Lucine" 
+DEL will NOT delete SWAP, therefore this chain will first swap Methionine with Lucine: 
+"START DEL Lucine Methionine", then will delete Lucine, which produces just "Methionine")
 Assuming reading left to right with a prefix evaluation, "GGGCUAUUUCAACUGUAA" (GGG CUA UUU CAA CUG UAA) 
 will make a protein consisting of Lucine -> Lucine (CUA -> CUG) because DEL (UUU) will delete Glutamine (CAA) (based on the codon.txt file above).  
 
