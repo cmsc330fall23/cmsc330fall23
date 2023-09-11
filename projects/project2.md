@@ -34,7 +34,7 @@ The example below shows the structure of the codon mapping file: <br>
   EXCHANGE: AGC
 ```
 In reality, both START and Methionine are the same sequence, in this case, we
-will have them separated. In general, you can assume the sequences for each codon are unique to that codon and there won't be overlap.
+will have them separated. For this project, you can assume the sequences for each codon are unique to that codon and there won't be overlap.
 
 You will need to read in this file and store this data in a data structure of
 your choice, as it will be needed later.
@@ -57,16 +57,19 @@ Additionally, we have five commands with special effects:
   SWAP: Swaps two amino acids in the chain
 ```
 
-These commands will modify the chain. 
+These commands will modify the chain. These 5 special commands will not operate on each other.
+(For example, reading this chain with a prefix evaluation: "START DEL SWAP Methionine Lucine" 
+DEL will NOT delete SWAP, therefore this chain will first swap Methionine with Lucine: 
+"START DEL Lucine Methionine", then will delete Lucine, which produces just "Methionine")
 Assuming reading left to right with a prefix evaluation, "GGGCUAUUUCAACUGUAA" (GGG CUA UUU CAA CUG UAA) 
 will make a protein consisting of Lucine -> Lucine (CUA -> CUG) because DEL (UUU) will delete Glutamine (CAA) (based on the codon.txt file above).  
 
 Other examples: 
 ```text
-  GGG CUA AGC CAA CUG UAA -> GGG CUA CAG CUG UAA 
+  GGG CUA AGC CAA CUG UAA -> CUA CAG CUG
   This will exchange CAA to CAG since Glutamine has two possible codons
   
-  GGG CUA CCC CAA CUG UAA -> GGG CUA CUG CAA UAA 
+  GGG CUA CCC CAA CUG UAA -> CUA CUG CAA
   This will swap the next two codons after the swap codon is seen 
 ```
 To make this even more complicated, since mRNA can come from either side
@@ -118,7 +121,7 @@ to these evaluations: <br>
 
 ## Functions to Implement
 #### `read_codons(file)`
-- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. As an added challenge, entries in the file can contain the regex pattern `\{\d+\}`. This pattern will have an effect on the entry. Consider the example below:
+- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. As an added challenge, entries in the file can contain the regex pattern `\{\d+\}`. This pattern will have an effect on the entry. Consider the example `codons7.txt` file below:
 ```text
   Serine: A{4}GU
   SWAP: G{6}CA, GGGCCCAAA
@@ -135,7 +138,7 @@ This means the sequence corresponding to the Serine amino acid is AAAAGU. Note t
 ```
 
 #### `read_evals(file)`
-- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. Here is an example of an eval text file.
+- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. Here is an example of an `eval.txt` file.
 ```text
   Order1: L, PO
   Order2: R, PR
@@ -250,6 +253,8 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 ```
 
 ## Testing & Submission
-Submission is similar to other projects. `Add`, `commit`, and `push` your changes to your GitHub classroom repo. Once changes are synced you can execute the `submit` command to send your work to gradescope. Testing your code locally can be done using the same pytest process from project 1.
+Submission is similar to other projects. `add`, `commit`, and `push` your changes to your GitHub classroom repo. Once changes are synced you can execute the `submit` command to send your work to gradescope. Testing your code locally can be done using the same pytest process from project 1.
 
-From the root directory of Project 2: `python3 -m pytest`. This command indicates the number of tests you're failing and why. Feel free to modify the public.py file in order to debug. If you make too many modifications you can always restore to the default state by copying from the git repository.
+From the root directory of Project 2: `python3 -m pytest`. This command indicates the number of tests you're failing and why. 
+Feel free to modify the public.py file in order to debug. If you make too many modifications you can always restore to the default state by copying from the git repository. 
+You can also create student tests in the folder `p2/test/student` by adding the files `__init__.py` and `test_student.py`
