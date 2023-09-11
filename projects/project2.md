@@ -121,7 +121,7 @@ to these evaluations: <br>
 
 ## Functions to Implement
 #### `read_codons(file)`
-- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. As an added challenge, entries in the file can contain the regex pattern `\{\d+\}`. This pattern will have an effect on the entry. Consider the example below:
+- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. As an added challenge, entries in the file can contain the regex pattern `\{\d+\}`. This pattern will have an effect on the entry. Consider the example `codon.txt` file below:
 ```text
   Serine: A{4}GU
   SWAP: G{6}CA, GGGCCCAAA
@@ -138,7 +138,7 @@ This means the sequence corresponding to the Serine amino acid is AAAAGU. Note t
 ```
 
 #### `read_evals(file)`
-- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. Here is an example of an eval text file.
+- **Description**: Given a path to a particular file, read all the contents of the file and store them in a data structure of your choice. Your data structure should be cleaned at the beginning of each read. Here is an example of an `eval.txt` file.
 ```text
   Order1: L, PO
   Order2: R, PR
