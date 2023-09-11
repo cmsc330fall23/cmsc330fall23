@@ -154,7 +154,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 #### `encode(sequence)`
 - **Description**: Given a string of amino acid names separated by spaces, create the RNA sequence. If a codon does not exist, skip over it. Read left to right. If a particular amino acid has several sequences, take the longest one. If there are multiple longest sequences, return either (you only need to return one potential correct answer).
 - **Type**: `str -> str`
-- **Assumptions**: Assume your `read_codons` function has already been called.
+- **Assumptions**: Assume your `read_codons` function was called.
 - **Examples**:
 ```py
   encode("START Glutamine Lucine STOP") # could return "GGGCAAACUUUUAA"
