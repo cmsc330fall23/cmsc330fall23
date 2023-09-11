@@ -253,6 +253,8 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 ```
 
 ## Testing & Submission
-Submission is similar to other projects. `Add`, `commit`, and `push` your changes to your GitHub classroom repo. Once changes are synced you can execute the `submit` command to send your work to gradescope. Testing your code locally can be done using the same pytest process from project 1.
+Submission is similar to other projects. `add`, `commit`, and `push` your changes to your GitHub classroom repo. Once changes are synced you can execute the `submit` command to send your work to gradescope. Testing your code locally can be done using the same pytest process from project 1.
 
-From the root directory of Project 2: `python3 -m pytest`. This command indicates the number of tests you're failing and why. Feel free to modify the public.py file in order to debug. If you make too many modifications you can always restore to the default state by copying from the git repository.
+From the root directory of Project 2: `python3 -m pytest`. This command indicates the number of tests you're failing and why. 
+Feel free to modify the public.py file in order to debug. If you make too many modifications you can always restore to the default state by copying from the git repository. 
+You can also create student tests in the folder `p2/test/student` by adding the files `__init__.py` and `test_student.py`
