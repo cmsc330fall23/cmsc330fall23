@@ -66,10 +66,10 @@ will make a protein consisting of Lucine -> Lucine (CUA -> CUG) because DEL (UUU
 
 Other examples: 
 ```text
-  GGG CUA AGC CAA CUG UAA -> GGG CUA CAG CUG UAA 
+  GGG CUA AGC CAA CUG UAA -> CUA CAG CUG
   This will exchange CAA to CAG since Glutamine has two possible codons
   
-  GGG CUA CCC CAA CUG UAA -> GGG CUA CUG CAA UAA 
+  GGG CUA CCC CAA CUG UAA -> CUA CUG CAA
   This will swap the next two codons after the swap codon is seen 
 ```
 To make this even more complicated, since mRNA can come from either side
