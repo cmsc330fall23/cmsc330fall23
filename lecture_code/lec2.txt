@@ -1,0 +1,60 @@
+set of real numbers
+{x + 1 \in R| x mod 2 > 0}
+{1,2,3,4}
+R, Q, Z, N
+R - Q and other operations like u,n,^c
+A subset B
+Power(A)
+[1,2] 
+(1,2]
+{2,4,6,8,....}
+{y|y= f(x) ^ x \in R}
+
+S = {1 \in S
+     x \in S => x + 1 \in S
+
+alphabet
+wildcards
+subset (or a way of relating sets to eachother)
+start of string, end of string
+maybe structure in way (spaces?)
+length of string or limitations to length
+logical operators (to put limitations on types of strings)
+including/exclusion
+rules for what we can put together(concatnation)
+quantifier(to be able to repeat)
+
+
+this|that
+{"this","that"}
+
+this|that|the other thing
+{"this","that","the other thing"}
+
+{"grey","gray"}
+grey|gray
+gre|ay => {"gre", "ay"}
+gr(e|a)y
+(c|k|qu)l(i|y)(ff|ph) -> cliff
+                         kliff
+                         quliff
+                         qulyph
+stephen vs steven
+ste(ph|v)en
+
+(0|1|2|3|4|5|6|7|8|9)(0|1|2|3|4|5|6|7|8|9)
+(0|1|2|3|4|5|6|7|8|9){2}
+(0|1|2|3|4|5|6|7|8|9){3}
+(0|1|2|3|4|5|6|7|8|9){4}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+Things we may need to describe a set of strings in a language
+alphabet
+rule for concatenation(both single symbols and larger words)
+exceptions to rules
+subset of alphabet
+position of where characters
+how often we can use a character (or total number of characters)
+OR operator of two subsets
+exclude subset from another
+repetition
+string equality
+wildcards
+start of string, end of string
+maybe structure in way (spaces?)
+length of string or limitations to length
+logical operators (to put limitations on types of strings)
+including/exclusion
+rules for what we can put together(concatnation)
+quantifier(to be able to repeat)
+
+hello|hi|hellohi
+{"hello","hi","hellohi"}
+
+{"|"}
+\|
+
+gra|ey => incorrect
+gre|ay => {"gre", "ay"}
+grey|gray => correct
+gr(e|a)y => {"grey","gray"}
+
+stephen 
+steven
+ste(ph|v)en
+
+(c|k|qu)l(i|y)(ff|ph) -> cliff
+                         kliff
+                         quliff
+                         cliph
+                         kliph
+                         quliph
+                         clyff
+                         klyff
+                         quyiff
+                         clyph
+                         klyph
+                         quyiph
+
+(0|1|2|3|4|5|6|7|8|9)(0|1|2|3|4|5|6|7|8|9)
+(0|1|2|3|4|5|6|7|8|9){2}
+(0|1|2|3|4|5|6|7|8|9){3}
+(0|1|2|3|4|5|6|7|8|9){4}
+((0|1|2|3|4|5|6|7|8|9){2}|(0|1|2|3|4|5|6|7|8|9){3}
+"12" -> yes (because strings, not numbers)
+"123" -> yes
+123 => no
+(0|1|2){2|3} => not valid
+(0|1|2){2,5} => inclusive repetitions
+
+(ha)* repeat 0 or more times
+{"","ha","haha","hahaha",...}
+[A-z] => A,B,C,...Y,Z,[,\,],^,_,`,a,b,c, 
+[A-Z]
+[a-z]
+[0-9]
+[0-4]
+
+[z-A] 
+startchar-endchar
+[A-Za-z] => same as => [A-Z]|[a-z]
+[ACE] => {"A","C","E"}
+
+[0-9]{2}
+
+[^4-7] => "%" is accepted
+       => "5" is not accepted
+a* => "",a,aa,aaa,aaaa,...
+a+ => a,aa,aaa,aaaa
+a? => "",a
+cl.ff -> cl5ff, clfff,cliff,...
+
+^[A-z][a-z]*
+^[0-9] => will not match "I am older than 18"
+          will match "18 older I am"
+
+[0-9]$ => will match "I am older than 18"
+          will not match "18 older I am"
+
+^[0-9].*[^0-9]$
+
+concat,
+or
+*
+[0-9] is just an or
+hello{2} is just concat
+a+ is just aa*
+a{2,3} is just aa|aaa

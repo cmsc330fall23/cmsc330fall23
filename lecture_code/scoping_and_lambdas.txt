@@ -1,0 +1,34 @@
+environmets: a mapping of values to variables
+x = 3
+{x:3}
+closure: a tuple of a (segment of code,environment)
+
+add = lambda x: lambda y: x + y
+add2 = add(2)
+add2 = (lambda y: x + y,{x:2})
+add2(3): (x +y, {x:2,y:3}) -> 2 +3 => 5
+
+def add(x):
+  return lambda y: x + y
+
+add3 = add(3)
+
+x = 6
+y = lambda a: (lambda b: a + x + b)
+g = y(3)
+g: (lambda b: a + x + b, {x:6,a:3})
+x = 2
+g: (lambda b: a + x + b, {x:2,a:3})
+h = g(3)
+h: (a + x + b, {x:2,a:3,b:3})
+
+
+def add(x):
+  def f(y):
+    return x + y
+  return f
+
+def f(y):
+  return y 
+def add(x):
+  return f
