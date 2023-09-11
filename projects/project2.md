@@ -34,7 +34,7 @@ The example below shows the structure of the codon mapping file: <br>
   EXCHANGE: AGC
 ```
 In reality, both START and Methionine are the same sequence, in this case, we
-will have them separated. In general, you can assume the sequences for each codon are unique to that codon and there won't be overlap.
+will have them separated. For this project, you can assume the sequences for each codon are unique to that codon and there won't be overlap.
 
 You will need to read in this file and store this data in a data structure of
 your choice, as it will be needed later.
