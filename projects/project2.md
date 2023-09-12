@@ -134,7 +134,7 @@ This means the sequence corresponding to the Serine amino acid is AAAAGU. Note t
 - **Type**: `str -> None`
 - **Examples**: 
 ```py
-  read_codons(inputs/codon1.txt)
+  read_codons("inputs/codon1.txt")
 ```
 
 #### `read_evals(file)`
@@ -148,7 +148,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 - **Type**: `str -> None`
 - **Examples**: 
 ```py
-  read_evals(inputs/orders1.txt)
+  read_evals("inputs/orders1.txt")
 ```
 
 #### `encode(sequence)`
