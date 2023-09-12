@@ -1,0 +1,28 @@
+Phone numbers
+XXXXXXXXXX
+(XXX)XXXXXXX
+XXX-XXX-XXXX
+(XXX)-XXXXXXX
+(XXX)-XXX-XXXX
+
+([0-9]{3})[0-9]{7}
+will only match line 2
+
+pn = re.compile("([0-9]{3})([0-9]{3})([0-9]{4})")
+match_groups = pn.match("1234567890")
+print(match_groups.group(1)) # prints out "123"
+print(match_groups.group(2)) # "456"
+print(match_groups.group(3)) # "7890"
+
+lines = [
+"Major: CS",
+"Major: PHIL",
+"Major: HIST",
+"Major: MATH",
+]
+mre = re.compile("Major: (([A-Z])+)")
+for x in lines:
+  m = mre.match(line)
+  m.group(1)
+
+
