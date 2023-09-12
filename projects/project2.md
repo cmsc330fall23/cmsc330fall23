@@ -220,7 +220,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
   # The above translates to "START Methionine DEL Lucine START"
   # Since "Op3" uses the Prefix operations AND reads left to right, We START, add Methionine, DELete the next codon which is Lucine, then ignore START since we already started
 
-  operate("GGGAAACUU","Op3") # "CUC" or "CUA" or "CUG"
+  operate("GGGAGCCUU","Op3") # "CUC" or "CUA" or "CUG"
   # The above translates to "START EXCHANGE Lucine"
   # Since "Op3" is left to right and uses prefix operations, we START, then exchange the next code for an equivalent one for the same amino acid.
   # Since CUU is Lucine, we can exchange it for CUC, CUA, or CUG. Multiple right answers are allowed here.
