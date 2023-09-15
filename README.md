@@ -7,6 +7,7 @@
 ### Discussion links
   + [Discussion 1](https://classroom.github.com/a/Gk3lXbAx)
   + [Discussion 2](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d2_hof_regex)
+  + [Discussion 3](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d3_nfa_dfa)
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
