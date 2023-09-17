@@ -157,7 +157,7 @@ A valid order name consists of 1 or more alphanumeric characters (either upper o
 - **Assumptions**: Assume your `read_codons` function was called.
 - **Examples**:
 ```py
-  encode("START Glutamine Lucine STOP") # could return "GGGCAAACUUUUAA"
+  encode("START Glutamine Lucine STOP") # could return "GGGCAACUUUAA"
   # Since amino acids have multiple possible RNA sequences, there are multiple correct answers
   encode("DEL Glutamine SWAP START") # could return "UUUCAGCCCGGG"
   encode("DEL INVALID Glutamine SWAP START") # could return "UUUCAGCCCGGG" and ignores the INVALID amino acid since it's not in the codon.txt
