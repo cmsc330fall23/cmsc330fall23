@@ -85,17 +85,17 @@ class Fsm:
     self.transitions = transitions
 ```
 
-A single transition in the `transition` instance variable of the Fsm class is in the form of a 3-tuple. For example:
+While the formal definition of a transition is a function that maps a state and character to a set of states, we will define transitions as 3-tuples `(src, letter, dest)` that map a start state (`src`) and a character (`letter`) to exactly one destination state (`dest`). This means that that each edge in the NFA will correspond to a single transition in the list of transitions. This will make the syntax for defining NFAs cleaner and allow for a one-to-one mapping between elements of the transition list and edges in the NFA graph.
+
+For `make_viz` to work properly, `src` and `dest` must be either ints, strings, int lists, or string lists.
+
+For example:
 
 ```python
 (0, 'c', 1)  #Transition from state 0 to state 1 on character 'c'
 (1, 'epsilon', 0) #Transition from state 1 to state 0 on epsilon
 ```
 These transitions are combined into a list in the Fsm class.
-
-While the formal definition of a transition is a function that maps a state and character to a set of states, we will define transitions as 3-tuples that map a start state and a character to exactly one destination state. This means that that each edge in the NFA will correspond to a single transition in the list of transitions. This will make the syntax for defining NFAs cleaner and allow for a one-to-one mapping between elements of the transition list and edges in the NFA graph.
-
-Please make sure that your transitions are a list of tuples of the form (src,letter,dest), with src and dest being states and letter being an element of the alphabet. For graphviz to work properly, src and dest must be either ints, strings, int lists, or string lists. For instance, a tuple could be (0,'a',1).
 
 We also provide a `__str__` method for the class to help with debugging and seeing the actual values when you want to print your Finite State Machines.
 
