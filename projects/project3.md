@@ -89,7 +89,7 @@ class Fsm:
 
 While the formal definition of a transition is a function that maps a state and character to a set of states, we will define transitions as 3-tuples `(src, letter, dest)` that map a start state (`src`) and a character (`letter`) to exactly one destination state (`dest`). This means that that each edge in the NFA will correspond to a single transition in the list of transitions. This will make the syntax for defining NFAs cleaner and allow for a one-to-one mapping between elements of the transition list and edges in the NFA graph.
 
-For `make_viz` to work properly, `src` and `dest` must be either ints, strings, int lists, or string lists.
+`src` and `dest` must be either ints, strings, int lists, or string lists.
 
 For example:
 
