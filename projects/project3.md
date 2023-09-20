@@ -43,6 +43,8 @@ Submitting to gradescope can be done using the exact same method used for projec
 
 You can write your own student tests in an attempt to predict the secret tests. Make a file called `test_student.py`. Put tests in this file following the format of the public.py file. Run the same command for running the public tests, but replace the file name with `test_student.py`.
 
+Python has a package called `graphviz`, which helps with visualization. You can install it through `pip install graphviz`. In your public and student tests, if you would like to visualize your NFA, you can do so by calling make_visual(fsm,filename,cleanup). `make_visual` is a function that we've provided for you in the visualizer.py file. The fsm is your Fsm object, so it has type Fsm. The filename is the name of the file that you want to create, and it has type str. cleanup has type bool, and you can either set it to True or False. Using graphviz is not required, but it can help you with your implementation. You can run `make_visual` directly from your test_public.py or test_student.py file. After you run `make_visual`, a folder called visual_output will be produced. If you set cleanup to True, you will only have the pdf file, while if you set cleanup to False, you will have both the gv and pdf files. By default, we've set filename to 'output' and cleanup to True. If you want to save your images, make sure your filename is different each time you run `make_visual`, otherwise your old images will be overwritten.
+
 ### Submitting
 
 First, make sure all your changes are pushed to github using the `git add fsm.py`, `git commit -m "message"`, and `git push` commands. You can refer to [my notes](https://bakalian.cs.umd.edu/assets/notes/git.pdf) for assistance. 
@@ -92,8 +94,6 @@ A single transition in the `transition` instance variable of the Fsm class is in
 These transitions are combined into a list in the Fsm class.
 
 While the formal definition of a transition is a function that maps a state and character to a set of states, we will define transitions as 3-tuples that map a start state and a character to exactly one destination state. This means that that each edge in the NFA will correspond to a single transition in the list of transitions. This will make the syntax for defining NFAs cleaner and allow for a one-to-one mapping between elements of the transition list and edges in the NFA graph.
-
-Python has a package called `graphviz`, which helps with visualization. You can install it through `pip install graphviz`. In your public and student tests, if you would like to visualize your NFA, you can do so by calling make_visual(filename,fsm,cleanup). `make_visual` is a function that we've provided for you in the visualizer.py file. The filename is the name of the file that you want to create, and it has type str. The fsm is your Fsm object, so it has type Fsm. cleanup has type bool, and you can either set it to True or False. Using graphviz is not required, but it can help you with your implementation. You can run `make_visual` directly from your test_public.py or test_student.py file. After you run `make_visual`, a folder called visual_output will be produced. If you set cleanup to True, you will only have the pdf file, while if you set cleanup to False, you will have both the gv and pdf files. For ease, you can set filename to 'output' and cleanup to True.
 
 Please make sure that your transitions are a list of tuples of the form (src,letter,dest), with src and dest being states and letter being an element of the alphabet. For graphviz to work properly, src and dest must be either ints, strings, int lists, or string lists. For instance, a tuple could be (0,'a',1).
 
@@ -185,6 +185,9 @@ Remember that every DFA is also a NFA, but the reverse is not true. The subset c
 
 #### `nfa_to_dfa(nfa)`
 - **Description**: This function takes as input a NFA(`nfa`) and converts it to an equivalent DFA. The language recognized by a NFA is invariant under `nfa_to_dfa`. In other words, for all NFAs `nfa` and for all strings `s`, `accept nfa s = accept (nfa_to_dfa nfa) s`.
+
+
+Please note that the tests in Part 1 may rely on other parts. This means that even if a test is called nfa_to_dfa, we may still call the accept,union,start,char,etc functions (shown in Part 2) within it.
 
 ## Part 2: Regular Expressions
 For the last part of the project, you will implement code that builds a NFA from a regular expression. 
