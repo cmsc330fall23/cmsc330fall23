@@ -146,7 +146,7 @@ Here are the functions you must implement:
   5. Move on `nfa_ex` from `1` with `epsilon` returns `[2]` since from 1 to 2 there is an epsilon transition.
 
 #### `e_closure(s,nfa)`
-- **Description**: This function takes as input a NFA (`nfa`) and a set of initial states (`s`). It outputs a set of states that the NFA might be in after making ***zero or more*** epsilon transitions after starting from the initial states. You can assume the initial states are valid (i.e. a subset of the NFA's states).
+- **Description**: This function takes as input a NFA (`nfa`) and a set of initial states (`s`). It outputs a set of states (represented by a list) that the NFA might be in after making ***zero or more*** epsilon transitions after starting from the initial states. You can assume the initial states are valid (i.e. a subset of the NFA's states).
 - **Examples**:
 
   ```python
