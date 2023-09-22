@@ -1,4 +1,4 @@
-# Discussion 4 - Friday, September 22<sup>th</sup>
+# Discussion 4 - Friday, September 22<sup>nd</sup>
 
 ## Reminders
 
