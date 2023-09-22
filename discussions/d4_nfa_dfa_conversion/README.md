@@ -1,11 +1,12 @@
-# Discussion 4 - Friday, September 22<sup>th</sup>
+# Discussion 4 - Friday, September 22<sup>nd</sup>
 
 ## Reminders
 
 1. Quiz 1 grades and solutions released, regrade requests open until **September 23rd @ 11:59pm**
-1. Exam 1 is on **Thursday, October 5th**
-1. Project 3 released, due **Friday, October 6th @ 11:59 PM**
-1. Additional (+4) late tokens, see [@575](https://piazza.com/class/lkimk0rc39wfi/post/575)
+2. Quiz 2 is next week (**Friday, September 29th**) during discussion
+3. Exam 1 is on **Thursday, October 5th**
+4. Project 3 released, due **Friday, October 6th @ 11:59 PM**
+5. Additional (+4) late tokens, see [@575](https://piazza.com/class/lkimk0rc39wfi/post/575)
 
 ## Topics List
 
