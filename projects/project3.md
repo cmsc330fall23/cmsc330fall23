@@ -11,7 +11,7 @@ Points: 35 public, 35 semipublic, 30 secret
 In this project, you will implement algorithms to work with NFAs, DFAs, and regular expressions. In particular, you will implement 
 - `accept` to see whether a string is accepted by a NFA
 - `nfa_to_dfa` to convert an NFA to a DFA using subset construction
-- functions generate NFA's representing regular expressions
+- `char`, `concat`, `union`, and `star` generate NFA's representing regular expressions
 
 You will also implement several other helper functions to assist in these tasks.
 
