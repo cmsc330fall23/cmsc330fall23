@@ -22,8 +22,6 @@ The project is broken into two parts. All of these parts will be completed in th
 
 ### Ground Rules
 
-To begin this project, you will need to commit any uncommitted changes to your local branch and pull updates from the git repository.
-
 This is NOT a pair project. You must work on this project alone, as with most other CS projects. See the [Academic Integrity](#academic-integrity) section for more information. 
 
 ### Testing
