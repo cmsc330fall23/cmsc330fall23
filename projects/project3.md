@@ -165,17 +165,17 @@ Here are the functions you must implement:
 - **Examples**:
 
   ```python
-  accept(dfa_ex,"") = false  # dfa_ex is the DFA defined above, this is still an NFA. (Recall that all DFAs are NFAs. However, not all NFAs are DFAs. This function could technically take in any NFA).
-  accept(dfa_ex,"ac") = true
-  accept(dfa_ex,"abc") = false
-  accept(dfa_ex,"abac") = true
+  accept(dfa_ex,"") = False  # dfa_ex is the DFA defined above, this is still an NFA. (Recall that all DFAs are NFAs. However, not all NFAs are DFAs. This function could technically take in any NFA).
+  accept(dfa_ex,"ac") = True
+  accept(dfa_ex,"abc") = False
+  accept(dfa_ex,"abac") = True
   ```
 
 - **Explanation**:
-  1. accept on `dfa_ex` with the string "" returns `false` because initially we are at our start state, 0, and there are no characters to exhaust, so we end up at state 0, which is not a final state.
-  2. accept on `dfa_ex` with the string "ac" returns `true` because from 0 to 1 there is an 'a' transition and from 1 to 2 there is a 'c' transition. Now, the string is empty, and we are in a final state. Thus, the NFA accepts "ac".
-  3. accept on `dfa_ex` with the string "abc" returns `false` because from 0 to 1 there is an 'a' transition, but then to use the 'b' we go back from 1 to 0, and we are stuck at 0 because we need a 'c' transition, but there is only an 'a' transition.
-  4. accept on `dfa_ex` with the string "abac" returns `true` because from 0 to 1 there is an 'a' transition, and then to use the 'b' we go back from 1 to 0. Then, we take an 'a' transition to go to state 1 again and then finally from 1 to 2 we exhaust our last character 'c' to make it to our final state. Since we are in a final state, the NFA accepts "abac".
+  1. accept on `dfa_ex` with the string "" returns `False` because initially we are at our start state, 0, and there are no characters to exhaust, so we end up at state 0, which is not a final state.
+  2. accept on `dfa_ex` with the string "ac" returns `True` because from 0 to 1 there is an 'a' transition and from 1 to 2 there is a 'c' transition. Now, the string is empty, and we are in a final state. Thus, the NFA accepts "ac".
+  3. accept on `dfa_ex` with the string "abc" returns `False` because from 0 to 1 there is an 'a' transition, but then to use the 'b' we go back from 1 to 0, and we are stuck at 0 because we need a 'c' transition, but there is only an 'a' transition.
+  4. accept on `dfa_ex` with the string "abac" returns `True` because from 0 to 1 there is an 'a' transition, and then to use the 'b' we go back from 1 to 0. Then, we take an 'a' transition to go to state 1 again and then finally from 1 to 2 we exhaust our last character 'c' to make it to our final state. Since we are in a final state, the NFA accepts "abac".
 
 ---
 
