@@ -41,7 +41,7 @@ Submitting to gradescope can be done using the exact same method used for projec
 
 You can write your own student tests in an attempt to predict the secret tests. Make a file called `test_student.py`. Put tests in this file following the format of the public.py file. Run the same command for running the public tests, but replace the file name with `test_student.py`.
 
-Python has a package called `graphviz`, which helps with visualization of fsm's. You can install it through `python3 -m pip install graphviz`. We have provided the `make_visual` function located in visualizer.py to generate the graphs. To use it in your public and student testing files you can call `make_visual(fsm)`, or `make_visual(fsm, filename)` from within a test. `fsm` is your Fsm object of type `Fsm`. Using `make_visual` is not required, but it can help during debugging. After you run `make_visual`, a folder called `visual_output` will be produced. If you want to save your images, make sure explicitly set your filename differently each time you run `make_visual`, otherwise your old images will be overwritten.
+Python has a package called `graphviz`, which helps with visualization of fsm's. You can install it by running (`sudo apt install graphviz` or `brew install graphviz`) AND `python3 -m pip install graphviz`. We have provided the `make_visual` function located in visualizer.py to generate the graphs. To use it in your public and student testing files you can call `make_visual(fsm)`, or `make_visual(fsm, filename)` from within a test. `fsm` is your Fsm object of type `Fsm`. Using `make_visual` is not required, but it can help during debugging. After you run `make_visual`, a folder called `visual_output` will be produced. If you want to save your images, make sure explicitly set your filename differently each time you run `make_visual`, otherwise your old images will be overwritten.
 
 ### Submitting
 
@@ -95,7 +95,7 @@ For example:
 (0, 'c', 1)  #Transition from state 0 to state 1 on character 'c'
 (1, 'epsilon', 0) #Transition from state 1 to state 0 on epsilon
 ```
-These transitions are combined into a list in the Fsm class.
+These transitions are combined into a list in the Fsm class. An epsilon transition will be represented as "epsilon".
 
 We also provide a `__str__` method for the class to help with debugging and seeing the actual values when you want to print your Finite State Machines.
 
@@ -193,6 +193,8 @@ Please note that the tests in Part 1 may rely on other parts. This means that ev
 For the last part of the project, you will implement code that builds a NFA from a regular expression. 
 
 You will create functions that build a NFA based on the things we learned in class.
+
+As input to these functions, we will represent epsilon as the empty string: `Char('')`. All other inputs will be single characters.
 
 Here are the functions you must implement:
 
