@@ -1,0 +1,128 @@
+x = x + 1
+x++
+same semantics, different syntax
+
+f(x) = x + 1 # function
+x + 1 # expression 
+# expression returns or evaluates to a value
+
+ocaml programs are more expresssions
+whereas python programs are more series of statements
+
+x + 2 + 1 + x is also an expression
+x + 2 added 1 + x two subexpressions joined with the + operator
+
+3 is an expression and a value
+1 + 3 is an expression, is not a value, but evaluates to the value of 4
+x = x + 1 is a statement
+y = (x = x + 1) does not work beause x = x + 1 is not an expression
+
+ocaml is statically typed
+ocaml is implicitly typed
+in ocaml, things are immutable
+ocaml is very srict with its types
+
+4:int
+1 + 3:int
+true:bool
+false:bool
++ is a function that operates only on integers
+
+def +(int x, int y):
+  return x + y
+
+so part of ocaml's type checker is something that does type inference
+
+(e1:int + e2:int):int
+(e1:int - e2:int):int
+(e1:int * e2:int):int
+(e1:int / e2:int):int
+
+(e1:float +. e2:float):float
+(e1:float -. e2:float):float
+(e1:float *. e2:float):float
+(e1:float /. e2:float):float
+
+(e1:bool && e2:bool):bool
+(e2:bool || e2:bool):bool
+(not e1:bool:bool
+
+(if e1:bool then e2:t1 else e3:t1):t1
+
+if true then 3 else "hello" this does not work
+
+if (if true then false else true) then 
+  (if true then 3 else 4):int else
+  (if false then "a" else "b"): string
+
+(if true then false else true):bool e1
+(if true then 3 else 4):int e2
+(if false then 6 else 7):int e3
+
+if e1 then e2 else e3
+if if true then false else true then if true then 3 else 4 else if false then 6 else 7
+
+(e1:t1 > e2:t1): bool
+(e1:t1 < e2:t1): bool
+(e1:t1 >= e2:t1): bool
+(e1:t1 <= e2:t1): bool
+(e1:t1 = e2:t1): bool
+
+if (3 > 4) then if 5> 6 then 7 > 8 else false else 9 = 0;;
+
+functions have types:
+(let f arg1:t1 arg2:t2 arg3:t3 ... argx:tx = e:ty):ty
+
+let f x y = x + y;;
+that f is a function that takes in a int and returns 
+                                            an (int -> int) function
+
+let g = f 3;; g is now a function that takes in a int and returns an int
+g 5 => 8
+
+lambda x, y: x + y
+=> lambda x: lambda y: x + y
+
+anonymous function syntax:
+fun arg1 arg2 ... -> e
+
+lambda x,y: x + y
+fun x y -> x + y
+
+(* these are all the same*)
+let f x y = x + y
+let f x = fun y -> x + y
+let f = fun x y -> x + y
+let f = fun x -> fun y -> x + y
+
+
+lambda x: 3 -> will always return 3
+
+let f x = 3
+let f = 3
+
+
+variables are functions with no arguments
+def x():
+  return 3
+x is a variable that points to some memory addres that holds a function
+x() + 4
+
+x = 3
+x is a variable that points to some memory address that hold 4
+x + 4
+
+
+Let bindings are not expressions
+let x = 4;;
+
+let x = 5
+
+x + 6 => 11
+
+let x = 4
+let f y = x + y (* closure is created, x = 4, immutable *)
+
+let x =6
+f 7 => 11 and not 13
+
