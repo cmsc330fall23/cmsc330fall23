@@ -56,7 +56,7 @@
    [2g] 'a -> 'b list -> 'a -> 'a * 'a
    ```
 
-3. Give the type for the following OCaml let binding:
+3. Give the type for the following OCaml `let` binding:
 
    ```ocaml
    let rec f p x y =
