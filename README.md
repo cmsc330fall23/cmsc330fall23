@@ -10,6 +10,7 @@
   + [Discussion 2](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d2_hof_regex)
   + [Discussion 3](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d3_nfa_dfa)
   + [Discussion 4](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d4_nfa_dfa_conversion)
+  + [Discussion 5](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d5_ocaml_typing)
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
