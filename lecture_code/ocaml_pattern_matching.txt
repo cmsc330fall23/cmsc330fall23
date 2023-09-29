@@ -1,0 +1,206 @@
+ocaml has a very rigid/strict type system
+
+(e1:int + e2:int):int
+(e1:int - e2:int):int
+(e1:int / e2:int):int
+(e1:int * e2:int):int
+
+(e1:float +. e2:float):float
+(e1:float -. e2:float):float
+(e1:float /. e2:float):float
+(e1:float *. e2:float):float
+
+(e1:bool && e2:bool):bool
+(e1:bool || e2:bool):bool
+(not e1:bool):bool
+
+(e1:t >  e2:t):bool
+(e1:t >= e2:t):bool
+(e1:t <  e2:t):bool
+(e1:t <= e2:t):bool
+(e1:t =  e2:t):bool
+
+(e1:string ^ e2:string):string
+
+(if e1:bool then e2:t else e3:t):t
+
+let f w x y z = x > w || y > z
+'a -> 'a -> 'b -> 'b -> bool
+x and w have to be the same type
+y and z have to be the same type
+there is nothing saying that x,w and y,z have to be the same type
+'a could be the same as 'b, but does not have to
+
+function syntax:
+(let f arg1:t1 arg2:t2 ...argx:tx = e:ty in f):t1->t2->...->tx->ty
+
+variable binding (the same as a function with no arguments)
+(let f = e:t in f):t
+
+anonymous function syntax
+fun arg1 arg2 ... -> e
+
+let f x y -> x - y (* this is incorrect *)
+
+functions have types
+expressions have types 
+based on the operations used
+x + y uses the int addition operator so x and y must be ints
+
+let f x y z = if x then y else z + 1
+x has to be a bool because it's the guard of the if expression
+y and z+1 have to have the same type because they are the true and false branch
+z has to be an int because z+1
+if z+1 is int, then y must also be an int
+
+
+lists are builtin to ocaml and are the default data structure
+list is recursive in nature
+a list is an item that points to another list
+or the empty list
+
+lists in ocaml must be homogenous (the same type)
+list elements are seperated by ; not ,
+lenght of list has no impact on the type of the list
+[1;2;3]: int list
+[1.0]: float list
+[]: 'a list
+[e1:t; e2:t; ...; ex:t]:t list
+
+[[[1;2;3];[1;2;3]];[[4;5;6];[7;8;9]]];; this works
+[[[1;2;3];[1;2;3]];[4;5;6];[7;8;9]];; this does not work because int list list is different that int list
+
+Syntax
+[e1:t; e2:t; ... ex:t]:t
+
+cons operator will add an item to the front of the list (not in place)
+(e1:t :: e2:t list): t list
+:: has type t-> t list -> t list
+append operator
+(e1:t list @ e2:t list): t list
+@ has type t list -> t list -> t list
+
+list is an item cons to list
+empty list is sometimes called nil
+
+lists are recursive
+lists have a head and a tail (car and cdr)
+head is item tail is the rest of the list
+[1;2;3;4]
+1 is the head
+[2;3;4] is the tail
+2 is the head
+[3;4] is the tail
+3 is head, [4] is tail
+4 is head [] is tail
+
+the following are all the same
+(1::(2::(3::(4::[]))))
+1::2::3::4::[]
+1::2::3::[4]
+1::2::[3;4]
+1::[2;3;4]
+
+pattern matching
+match expression
+(match e1:'a with
+ p1 -> e2:'b
+|p2 -> e3:'b
+...
+|px -> ey:'b):'b
+
+
+switch(e1):
+  case p1: e2
+  case p2: e3
+  ...
+  case px: ey
+
+let x = e1 in e2
+let x = 5 in (match 4 with 
+0 -> 0
+|x -> -x)
+
+let x = (match 4 with 0 -> "hi" | x -> "other") in "value: " ^ x
+
+but we can use pattern matching to breakdown lists
+[1;2;3;4] is the same 
+1::[2;3;4]
+
+let rec sum lst = match lst with
+[] -> 0
+|h::t -> h + sum t
+
+let first lst = match lst with
+[] -> -1
+|h::t -> h
+
+let last lst = match lst with
+[] -> -1
+|h::[] -> h
+|_::t -> last t
+
+let rec second_to_last lst = match lst with
+[] -> -1
+|[h] -> -1
+|h::_::[] -> h
+|h::t -> second_to_last t
+
+
+the next built in data structure is called a tuple
+(1,2):int * int
+the type of a tuple depends on type of elements and the size of the tuple
+(e1:'a,e2:'b,...ex:'x): 'a * 'b * ... * 'x 
+
+(1,2) does not have the same type as (1,2,3)
+(1,1.0): int * float
+tuples can be heterogenous
+tulpes are fixed size
+we can pattern match on them
+match (1,2) with
+(x,y) -> x + y
+
+let modsum x = match x with
+(a,b,_) -> a + b
+
+variants: like enums
+allow us to define a custom data type
+
+type name = Value1|Value2|...|Valuex
+
+
+type coin = Heads|Tails
+let flip c = match c with
+ Heads -> Tails
+|Tails -> Coins
+
+type color = Red of int|Green of int|Blue of int
+Red(255):color
+Blue(0):color
+Green(10):color
+
+type hue = Shade of color * color * color
+Shade(Red(255),Green(0),Blue(10))
+
+
+type number = Int of int | Float of float
+Int and Float are arbitrary names
+could have been type number = A of int | Float of float
+
+[Int(2);Float(1.0);Int(4);Int(5);]
+let rec sumnum lst = match lst with
+[] -> 0.0
+|Int(x)::t -> float_of_int x + sumnum t
+|Floatt(x)::t -> x + sumnum t
+
+---------------------------------------
+match lst with
+[] -> 1
+|h::t -> t
+would not work because t will always be a list of some sort
+
+let x = 4 is not an expression, it is a binding (can be used like global constants)
+let x = 4 in x is an expression and this has value 4
+
+x + (let y = 3);; would not work
+x + (let y = 3 in y);; would work
