@@ -14,4 +14,4 @@
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
- + [Exam 1 Review]()
+ + [Exam 1 Review](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/review/e1_python_regex)
