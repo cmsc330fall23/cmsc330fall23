@@ -6,8 +6,8 @@ and the value is their bounty.
 import re
 from functools import reduce
 
-bounties = ["Monkey D Luffy: $30,000,000", "Zoro the Pirate Hunter: $60,000,000", "Buggy the Clown: $15,000,000",
-             "Arlong the Saw: $20,000,000","Gold Roger: ???", "Mihawk: Bounty Cancelled"]
+bounties = ["Monkey D Luffy: $30,000,000", "Zoro The Pirate Hunter: $60,000,000", "Buggy The Clown: $15,000,000",
+             "Arlong The Saw: $20,000,000","Gold Roger: ???", "Mihawk: Bounty Cancelled"]
 def load_bounties(bounties):
     res = {}
     r = r'^(([A-Z][A-Za-z]* )*[A-Z][A-Za-z]*): \$((\d{1,3},(\d{3},)*\d{3})|\d{1,3})$'
