@@ -1,0 +1,217 @@
+x = 3
+x + 1
+
+lambda x: x +1 is a value
+
+3 is a value
+
+x = lambda x: x + 1
+x(3) 
+
+python
+x = 3 # 3 is stored in memory at some mem addr, that mem addr gets a name called x
+x + 1 # i look which mem addr x refers to, i read data from there and perform my operation
+
+lambda x: x + 1
+f = lambda x: x + 1 # lambda x: x + 1 is stored in memory and mem addr has name f
+f(4) # mem addr for f is looked up, and I read data from there 
+
+def f(x):
+  return x + 1
+
+let x = 3 in x + 1
+let f = fun x -> x + 1 in f
+let f x = x + 1 in f
+
+lambda x,y: x + y
+is different
+lamda x: lambda y: x + y
+
+f = lambda x,y: x + y can be used the same as 
+def f(x,y):
+  return x + y
+
+f = lambda x: lambda y: x + y can be used the same as
+def f(x):
+  def g(y):
+    return x + y
+  return g
+
+g = f(4)
+g(3)
+f(5)(3)
+
+let f a b = a + b
+is the same as 
+let f = fun a b -> a + b
+is the same as 
+let f = fun a -> fun b -> a + b
+is the same as 
+let f a = fun b -> a + b
+
+(let g x = x + 1 in (g))
+                    ---  scope that g can be used in 
+{
+  def g(x):
+    return x
+  g(3)
+}
+g(4) #not fine due to scope in which g can be seen
+
+let x = 4 in let y = 5 in x + y
+             ------------------   scope of x
+                          -----   scope of y
+let var = e1 in e2
+                -- is the scope of var
+
+let x = 4 in let y = 3 in x + y
+             ------------------ scope of x = 4
+                          ----- scope of y = 3
+
+scope in general:
+let x = 3 in let x = 4 in x
+variables are immutable and variables are overshadowed in nested scopes
+x = 3
+{x = 4
+ x
+}
+
+let x = 4 in let x = 5 in x + y;; error: unbound var y
+let x = 4 in let x = 5 in x => 10 because the inner x shadows the first one
+let x = 4 in let y = 5 in y => 10 to make this more readable
+
+let x = 4 in 
+  let x = 5 in
+    x + x
+
+x = 4
+{ x = 5
+  x + x
+}
+x # in python, this x = 5, as opposed ocaml, where this is now 4
+
+let x = 4 in let y = let x = 3 in x in x
+             --------------------------- scope of x =4
+                                       - scope of y
+                                  -      scope of x = 3
+(let x = 4 in (let y = (let x = 3 in x) in x))
+                       (let x = 3 in x)
+
+f = lambda x: lambda y: x + y
+g = f(4)
+in this case
+g = lambda y: 4 + y, 
+g = {lambda y: x + y, [x = 4]} # this is the idea of a closure
+g(5) -> x + y, y = 5 and x = 4 => 9
+
+let f a b = a + b
+let g = f 4       (* here closure is created *)
+g 3               (* the closure is called and evaluated *)
+
+
+let f a b = a + b
+let f = fun a -> fun b -> a + b
+
+let g = f 3 (* g = fun b -> a + b, a = 3 *) (* closure is created, a closure is this code * variable binding *)
+g 5 => 8 (* the closure is called/evaluated *)
+
+let x = 4;;
+let f a = x + a (* x + a, x = 4 *)
+let x = 3;; (* this overshadows the x = 4 binding *)
+f 2 => 6
+
+let x = 4;;
+x + 5;;
+let x = 6;;
+x + 2
+
+{ int x = 4;
+  x + 5;
+  { x = 6
+    x + 2
+  }
+}
+
+because variables are immutable:
+in python we can do
+x = 4
+f = lambda a: x + a
+f(5) == 9
+x = 5
+f(5) == 10
+
+whereas in ocaml
+let x = 4;;
+let f = fun a -> x + a
+f 5 = 9
+let x = 3;;
+f 5 = 9
+
+map and reduce (* ocaml calls it fold *)
+
+def map(f,lst):
+  ret = []
+  for x in lst:
+    ret.append(f(x))
+  return ret
+
+let rec map f lst = 
+  match lst with
+     [] -> []
+    |h::t -> (f h)::(map f t)
+
+'a -> 'b -> 'c
+'a -> 'b -> 'c list we know return value is a list due to [] -> []
+('a -> 'd) -> 'b -> 'c list we know first param is a function with 1 input due to (f h)
+('a -> 'd) -> 'b list -> 'c list we know lst is a list because we are matching with list patterns
+('a -> 'c) -> 'b list -> 'c list we know f returns 'c because (f h) is an element of the output list
+('b -> 'c) -> 'b list -> 'c list we know f takes in an element of a 'b list because (f h) and h is an element of lst which we know via pattern matching
+('a -> 'b) -> 'a list -> 'b list
+('a -> 'b) -> 'a list -> 'b list
+
+ArrayList<T> 'a
+HashMap<T,Q> 'a,'b
+
+map (fun x -> int_of_float x) [1.0;2.0]
+
+map (int_of_float) [1.0;2.0]
+
+because map's input function has type 'a -> 'b, functions that don't follow this, 
+cannot be sent into map
+
+map (fun a b -> a + b) [1;2;3;4] (* this would not work*)
+
+let f a b = a + b cannot be used for map because this function has type int -> int -> int
+and we are looking for 'a -> 'b
+
+def reduce(f,lst,s):
+  ret = s
+  for x in lst:
+    ret = f(x,s)
+  return ret
+
+let rec fold f a lst = 
+  match lst with
+  [] -> a
+  |h::t -> fold f (f a h) t
+
+('a -> 'b -> 'a) -> 'a -> 'b list -> 'a 
+
+the function signature of fold is 'a -> 'b -> 'a
+fun x -> x + 1 would not work with fold
+
+
+---------------------------- dont need quite yet
+
+alpha equivalence: the property of two expressions to mean the exact same thing, but changed variables
+
+def f(x):
+  return x + 1
+
+def f(y):
+  return y + 1
+
+let x = 4 in let y = 5 in y 
+let x = 5 in let x = 5 in x
+
+
