@@ -40,7 +40,7 @@ Let's generalize `map` and `fold` to work on our new `tree` structure:
   fold_tree (fun l s r -> l ^ s ^ r) "" tree_a = "Hello World!"
   fold_tree (fun l x r -> max (max l x) r) 0 tree_b = 6
   ```
-
+sdfsd
 ### `map_tree f tree`
 
 - **Type**: `('a -> 'b) -> 'a tree -> 'b tree`
