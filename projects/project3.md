@@ -87,7 +87,7 @@ class Fsm:
 
 While the formal definition of a transition is a function that maps a state and character to a set of states, we will define transitions as 3-tuples `(src, letter, dest)` that map a start state (`src`) and a character (`letter`) to exactly one destination state (`dest`). This means that that each edge in the NFA will correspond to a single transition in the list of transitions. This will make the syntax for defining NFAs cleaner and allow for a one-to-one mapping between elements of the transition list and edges in the NFA graph.
 
-`src` and `dest` must be either ints, strings, int lists, or string lists.
+`src` and `dest` should be either ints, strings, int lists, string lists, int tuples, or string tuples.
 
 For example:
 
@@ -209,12 +209,15 @@ Here are the functions you must implement:
 
 #### `def concat(nfa1, nfa2):`
 -  **Description**: Takes in two NFA's and returns a new NFA that is the concatenation of the two NFA arguments.
+-  **Assumptions**: `nfa1` and `nfa2` are the result of calling either `char`, `concat`, `union`, or `star`. We will not manually create NFA's.
 
 #### `def union(nfa1, nfa2):`
 -  **Description**: Takes in two NFA's and returns a new NFA that is the union of the two NFA arguments.
+-  **Assumptions**: `nfa1` and `nfa2` are the result of calling either `char`, `concat`, `union`, or `star`. We will not manually create NFA's.
 
 #### `def star(nfa):`
 -  **Description**: Takes in a NFA and returns a new NFA that has the kleene closure applied to it.
+-  **Assumptions**: `nfa1` and `nfa2` are the result of calling either `char`, `concat`, `union`, or `star`. We will not manually create NFA's.
 
 [lecture slides]: https://bakalian.cs.umd.edu/330/schedule
 [lecture notes]: https://bakalian.cs.umd.edu/330/schedule 
