@@ -6,6 +6,10 @@
 1. Exam 1 makeup **Tuesday, October 10th**
    1. Signup form + logistics: [@812](https://piazza.com/class/lkimk0rc39wfi/post/812)
 
+## Notes
+
+- OCaml [`map`](https://github.com/cmsc330-umd/spring23/tree/main/discussions/d4_hof#part-1-map) and [`fold`](https://github.com/cmsc330-umd/spring23/tree/main/discussions/d4_hof#part-2-fold) review
+
 ## Exercise
 
 Let's build a custom `tree` data type in OCaml! First, we will define the `tree` type:
@@ -77,9 +81,9 @@ Let's generalize `map` and `fold` to work on our new `tree` structure:
 
 More notes & examples can be found in [last semester's OCaml HOF discussion](https://github.com/cmsc330-umd/spring23/tree/main/discussions/d4_hof).
 
-## Note:
-The idea of mapping and folding over non-list data structures is not novel. We want these higher-order functions to be *data structure independent*. While in this discussion we have implemented the `fold` and `map` functions for the `tree` data structure, they are already built into the language and OCaml does have other data structures it supports. For example, OCaml supports sets from the `Set` module and sets have `map` and `fold`. 
+## Addendum
 
+The idea of mapping and folding over non-list data structures is not novel. We want these higher-order functions to be _data structure independent_. While in this discussion we have implemented the `fold` and `map` functions for the `tree` data structure, they are already built into the language and OCaml does have other data structures it supports. For example, OCaml supports sets from the `Set` module and sets have `map` and `fold`.
 
 ## Resources & Additional Readings
 
