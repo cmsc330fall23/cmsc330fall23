@@ -194,17 +194,17 @@ For the last part of the project, you will implement code that builds a NFA from
 
 You will create functions that build a NFA based on the things we learned in class.
 
-As input to these functions, we will represent epsilon as the empty string: `Char('')`. All other inputs will be single characters.
-
 Here are the functions you must implement:
 
 #### `def char(string):` 
--  **Description**: Takes in a character and returns a NFA (a FSM object) that accepts the string and only that string.
+-  **Description**: Takes in a string and returns a NFA (a FSM object) that accepts the string and only that string.
 - It may help to create a global variable and increment it every time a state is created to ensure that each new state you create is different. You may use the `fresh` function we have provided to help, but you are not required to use it.
+-  **Assumptions**: Inputs will be either **the empty string** (representing epsilon) or **strings of length 1** (single characters)
 -  **Examples**:
 
   ```python
   char('a') = Fsm(['a'], [0, 1], 0, [1], [(0,'a',1)])  # You can create any Fsm object that accepts the string 'a' and only that string.
+  char('') = Fsm([], [0, 1], 0, [1], [(0,'epsilon',1)])  # You can create any Fsm object that accepts the string '' and only that string.
   ```
 
 #### `def concat(nfa1, nfa2):`
