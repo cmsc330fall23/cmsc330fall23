@@ -28,6 +28,8 @@ Running the public tests locally can by done using the command below:
 
 `dune runtest -f`. This will run both public and student tests. If you want to only test a specific file, say your student tests file, run `dune runtest test/student`, replacing the path if your testing files are located in a directory elsewhere. We recommend you write student tests in `test/student/student.ml`.
 
+Before you submit to Gradescope, make sure you have no warnings when running your tests. Warnings are fatal in dune, and this can cause your code to not compile/be graded when you submit.
+
 Submitting to Gradescope can be done using the exact same method used for project 0. Add your changes, commit them, push them, and then enter the submit keyword.
 
 You can interactively test your code by doing `dune utop src` (assuming you have `utop`). Then you should be able to use any of the functions. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging.
