@@ -197,7 +197,7 @@ let rec fold f a lst =
 
 ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a 
 
-the function signature of fold is 'a -> 'b -> 'a
+the function passed into fold has the signature 'a -> 'b -> 'a
 fun x -> x + 1 would not work with fold
 
 
