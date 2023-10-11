@@ -232,7 +232,7 @@ create a helper function to determine whether a number is prime or not.
 
 # Part 4: Higher Order Functions
 
-Write the following functions using `map`, `fold`, or `fold_right` as defined in the file `funs.ml`. You **must** use `map`, `fold`, or `fold_right` to complete these functions, so none of the functions in Part 4 should be defined using the `rec` keyword. You also may not create recursive helper functions, but can use anything previously defined above. You will lose points if this rule is not followed. 
+Write the following functions using `map`, `fold`, or `fold_right` as defined in the file `funs.ml`. You **must** use `map`, `fold`, or `fold_right` to complete these functions, so none of the functions in Part 4 should be defined using the `rec` keyword. You also may not create recursive helper functions, but may use *any* function from parts 1-3. You will lose points if this rule is not followed. 
 
 #### `is_present lst x`
 
