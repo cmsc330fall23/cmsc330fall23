@@ -200,7 +200,58 @@ let rec fold f a lst =
 the function passed into fold has the signature 'a -> 'b -> 'a
 fun x -> x + 1 would not work with fold
 
+There is another common fold function which is slightly different.
 
+let rec foldr f lst a = 
+  match lst with
+  [] -> a
+  |h::t -> f h (foldr f t a)
+
+('a -> 'b -> 'b) -> 'a list -> 'b -> 'b
+
+the functions sent in to foldl and foldr have different types (swapped params)
+the params of foldl and foldr themselves also are swapped
+recurses from left to right in foldl and right to left in foldr
+we can see this in the following example:
+fold (fun acc x -> let _ = print_int x in acc) true [1;2;3]
+foldr (fun x acc -> let _ = print_int x in acc) [1;2;3] true
+
+this means acc is modified on the popping back up through stack with foldr
+whereas acc is modified on the recursive call with foldl
+foldleft does work and then recurses
+foldright recurses then does work
+
+typically when a function is called (recursive or not) a stack frame is added to stack
+
+
+foldr (+) [1;2] 0
+
+------sf-------
+f = (+)
+lst = [1;2]
+a = 0
+return f 1 (foldr f [2] 0) -> f 1 2 => 3
+------sf-------
+f = (+)
+lst = [2]
+a = 0
+return f 2 (foldr f [] 0) -> f 2 0 -> 2
+------sf--------
+f = (+)
+lst = []
+a = 0
+return 0
+
+but sometimes we can get rid of the need to add more stack frames by overwriting the current one, or by popping off the current and immedietly adding a new one. 
+This is is a compiler optimization associated with tail calls.
+fold can do this, but foldr cannot do this. 
+Thus foldr could lead to stackoverflow exceptions, whereas fold will not
+
+here is an example of fibinocci that will not stack overflow assuming a optimized compiler:
+
+let rec fib n a b = 
+  if n = 0 then b
+  else fib (n-1) b (a+b)
 ---------------------------- dont need quite yet
 
 alpha equivalence: the property of two expressions to mean the exact same thing, but changed variables
