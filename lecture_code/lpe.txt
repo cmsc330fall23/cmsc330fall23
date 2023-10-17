@@ -1,0 +1,65 @@
+lexing (tokenizing):  is the process of taking a string of 
+                      characters, and making sure that the string
+                      contains valid words
+
+allowed:
+the red truck
+the green car
+the boy ran really fast
+boy the ran fast
+
+disallowed
+th& bb(Q! fried
+glorbo flourbo gazebo
+
+Parsing: is the process of making sure that the strucure of the words is valid
+         (Making sure the sentence is grammatically correct)
+
+allowed
+the red truck
+the boy ran
+
+disallowed
+truck the red
+truck red the
+
+grammar is language dependent
+(+ 1 2) valid racker, invalid ocaml
+(1 + 2) valid ocaml, invalid racket
+
+there are a variety of different parsers that exist
+  Left leaning and right leaning parsers
+  Look-a-head  parsers
+  backtracking parsers
+  recursive descent parsers
+  bottom-up parsers
+
+  in this course: LL(1) -> Left leaning, lookahead by 1 parser (via recursive descent)
+  LL(1) parsers have some restrictions: cannot parse ambiguous grammars
+  ambiguous grammars can be converted to nonambiguous grammars if you are restrained to LL1 parser
+
+         
+evaluating: the process of deriving meaning from a grammatically correct sentence
+
+  allowed
+  1 + 2
+  3 * 6
+  true && false
+
+  disallowed
+  true + 4.0 
+
+lexing: string -> token list
+
+parsing: token list -> parse tree or Absract syntax tree
+
+evaluator: tree -> value|code
+  interpreter: value
+    1 + 2 -> 3
+  compiler: code
+    1 + 2 -> mov 1 abx;
+             mov 2 aby;
+             add abx aby;
+
+
+
