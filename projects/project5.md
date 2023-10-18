@@ -25,7 +25,7 @@ Several helper functions have been provided for you, as detailed at the end of t
 
 The procedure for testing this project is the same as the previous project. `dune` handles the majority of the work but, an environment variable must be set for `dune` to know where to find the precompiled binary files distributed with the project.
 
-For this project, you must have OCaml version 4.14.0. or newer To make sure you have the correct version of OCaml, run `ocaml --version`. If your version of OCaml is not 4.14.0, refer to the project 0 instructions to update your version.
+For this project, you must have OCaml version 4.13.0. or newer To make sure you have the correct version of OCaml, run `ocaml --version`. If your version of OCaml is not 4.14.0, refer to the project 0 instructions to update your version.
 
 Public and student tests can be run using the same `dune` command that you used in the previous projects but, you may need to set the environment variable `OCAMLPATH` before running the command. The full command is now `env OCAMLPATH=dep dune runtest -f`. Setting `OCAMLPATH` tells `dune` where it can find the functions over sets that we have provided. 
 
