@@ -7,6 +7,7 @@
    2. Regrades open until **Tomorrow, October 21st @ 11:59 PM**
 2. Quiz 3 next **Friday, October 27th**
 3. Project 5 released, due **October 30th @ 11:59 PM**
+   1. FAQ: [@1156](https://piazza.com/class/lkimk0rc39wfi/post/1156)
 
 ## Coding Exercise
 
