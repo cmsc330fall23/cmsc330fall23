@@ -2,11 +2,11 @@
 
 ## Reminders
 
-1. Quiz 3 next **Friday, October 27th**
-2. Project 4 due **October 30th @ 11:59 PM**
-3. Exam 1 grades & solutions posted: [@1178](https://piazza.com/class/lkimk0rc39wfi/post/1178)
+1. Exam 1 grades & solutions posted: [@1178](https://piazza.com/class/lkimk0rc39wfi/post/1178)
    1. Solutions posted on [class website](https://bakalian.cs.umd.edu/330/resources)
    2. Regrades open until **Tomorrow, October 21st @ 11:59 PM**
+2. Quiz 3 next **Friday, October 27th**
+3. Project 5 released, due **October 30th @ 11:59 PM**
 
 ## Coding Exercise
 
@@ -36,7 +36,6 @@
 - **NOTES:**
   - Take a look at the variant type `token` we have defined
   - Keep an index that keeps track of where we are in the string, and move forward as we keep tokenizing.
-  - In the project, you will have to worry about the order in which you have `if/else` ... `if/else` statements (certain regexs should be checked before others).
   - It's probably also a good idea to just define all the regex's and store in variables at the top.
 
 ### Parser
