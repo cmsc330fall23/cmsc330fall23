@@ -36,7 +36,7 @@ let rec map_tree f t =
 
 (* fold_tree variant for map_tree *)
 let rec map_tree f t = 
-  fold_tree (fun l v r -> Node(l, f v, r)) t
+  fold_tree (fun l v r -> Node(l, f v, r)) Leaf t
 
 let add1 tree = map_tree (fun x -> x + 1) tree
 
