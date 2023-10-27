@@ -16,6 +16,7 @@
   + [Discussion 6](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d6_ocaml_hof)
   + [Discussion 7](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d7_cfg)
   + [Discussion 8](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d8_parsing)
+  + [Discussion 9](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/discussion9)
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
