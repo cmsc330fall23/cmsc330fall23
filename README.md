@@ -7,6 +7,7 @@
   + [Project 3](https://classroom.github.com/a/OEy95tyX) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project3.md))
   + [Project 4](https://classroom.github.com/a/eS6ORRAE) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project4.md))
   + [Project 5](https://classroom.github.com/a/4FOhv0xA) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project5.md))
+  + [Project 6](https://classroom.github.com/a/mki8hqkk) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project6.md))
 ### Discussion links
   + [Discussion 1](https://classroom.github.com/a/Gk3lXbAx)
   + [Discussion 2](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d2_hof_regex)
