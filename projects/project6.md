@@ -1,11 +1,11 @@
 # Project 6: Lambda Calc Interpreter
-Due: November 15th, 2023 at 11:59 Pm
+Due: November 15th, 2023 at 11:59 pm
 
 Points: 35 public, 65 semipublic
 
 ## Introduction
 
-In Project 6 you will implement an interpreter for Lambda calculus and a English-to-Lambda Calculus compiler.
+In Project 6 you will implement an interpreter for Lambda calculus and an English-to-Lambda Calculus compiler.
 These both consist of three components: a lexer (tokenizer), a parser, and evaluator (interpreter) or generator (compiler).
 
 Your lexer function will convert an input string to a token list, your parser function will consume these tokens to produce an abstract symbol tree (AST), your evaluator will reduce the lambda calculus expression and your compiler will convert from one language to another.
@@ -62,7 +62,7 @@ Your lexer must be written in [lexer.ml](./src/lexer.ml). You will need to imple
   ```ocaml
   lex_lambda "L" = [Lambda_Lambda; Lambda_EOF]
 
-  lex_lambda "(Lx. (x x))" = [Lambda_LParen; Lambda_Lambda; Lambda_Var "x"; Lambda_Dot; Lambda_LParen; Lambda_Var "x"; Lambda_Var "x"; Lambda_RParen; Lambda_RParen;Lambda_EOF]
+  lex_lambda "(Lx. (x x))" = [Lambda_LParen; Lambda_Lambda; Lambda_Var "x"; Lambda_Dot; Lambda_LParen; Lambda_Var "x"; Lambda_Var "x"; Lambda_RParen; Lambda_RParen; Lambda_EOF]
 
   lex_lambda ".. L aL." = [Lambda_Dot; Lambda_Dot; Lambda_Lambda; Lambda_Var "a"; Lambda_Lambda; Lambda_Dot; Lambda_EOF]
 
@@ -184,7 +184,7 @@ These functions are to help you consume and check the first token in the list an
 For example:
 ```ocaml
 let tok_list = [Engl_LParen; Engl_True; Engl_RParen] in
-assert_equal Engl_LParen  (lookahead tok_list);
+assert_equal Engl_LParen (lookahead tok_list);
 assert_equal [Engl_True;Engl_RParen] (match_token tok_list Engl_LParen);
 (match_token tok_list Engl_RParen) (* raises error *)
 ```
@@ -413,13 +413,13 @@ Consider how this would change for our project.
     The type however is `string` if you want to modify this to help you with `alpha_convert`.
   - `fresh` may also help here but you do not need to use it.
 - Here are some examples of `alpha_convert`. This is not the only output that would be valid:
-```ocaml
-alpha_convert (Func("x",Var("x"))) = Func("y",Var("y"))
+  ```ocaml
+  alpha_convert (Func("x",Var("x"))) = Func("y",Var("y"))
 
-alpha_convert (Func("x",Var("y"))) = Func("x",Var("y"))
+  alpha_convert (Func("x",Var("y"))) = Func("x",Var("y"))
 
-alpha_convert (Application(Func("x",Var("x")),Var("x"))) = Application(Func("y",Var("y")),Var("x"))
-```
+  alpha_convert (Application(Func("x",Var("x")),Var("x"))) = Application(Func("y",Var("y")),Var("x"))
+  ```
 
 ### Compiler
 
@@ -458,7 +458,7 @@ English | Church Encoding
 
   readable (Func("y", Func("x"), Var("y"))) = "true"
 
-  let c1 = parse_lambda(lex_lambda "(((Lx.(Ly.x)) (Lx.(Ly.y)))(Lx.(Ly.x)))") in 
+  let c1 = parse_lambda (lex_lambda "(((Lx.(Ly.x)) (Lx.(Ly.y)))(Lx.(Ly.x)))") in 
   readable c1 = "(if true then false else true)"
 
   let c2 = parse_lambda (lex_lambda "(((Lx.(Ly.((x y) (Lx.(Ly.y)))))(Lx.(Ly.x)))(Lx.(Ly.y)))")
