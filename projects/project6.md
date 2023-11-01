@@ -197,9 +197,9 @@ Below is the AST type `lambda_ast`, which is returned by `parse_lambda`.
 type var = string
 
 type lambda_ast = 
-  |Var of var
-  |Func of var * lambda_ast 
-  |Application of lambda_ast* lambda_ast
+  | Var of var
+  | Func of var * lambda_ast 
+  | Application of lambda_ast * lambda_ast
 ```
 
 In the grammar given below, the syntax matching tokens (lexical representation) is used instead of the token name. For example, the grammar below will use `(` instead of `Lambda_LParen`. 
@@ -219,11 +219,11 @@ Below is the AST type `engl_ast`, which is returned by `parse_engl`.
 
 ```ocaml
 type engl_ast= 
-  |If of engl_ast * engl_ast * engl_ast
-  |Not of engl_ast
-  |And of engl_ast * engl_ast
-  |Or of engl_ast * engl_ast
-  |Bool of bool
+  | If of engl_ast * engl_ast * engl_ast
+  | Not of engl_ast
+  | And of engl_ast * engl_ast
+  | Or of engl_ast * engl_ast
+  | Bool of bool
 ```
 
 In the grammar given below, the syntax matching tokens (lexical representation) is used instead of the token name. For example, the grammar below will use `(` instead of `Engl_LParen`. 
@@ -413,12 +413,12 @@ Consider how this would change for our project.
     The type however is `string` if you want to modify this to help you with `alpha_convert`.
   - `fresh` may also help here but you do not need to use it.
 - Here are some examples of `alpha_convert`. This is not the only output that would be valid:
-```
-alpha_convert Func("x",Var("x")) = Func("y",Var("y"))
+```ocaml
+alpha_convert (Func("x",Var("x"))) = Func("y",Var("y"))
 
-alpha_convert Func("x",Var("y")) = Func("x",Var("y"))
+alpha_convert (Func("x",Var("y"))) = Func("x",Var("y"))
 
-alpha_convert Application(Func("x",Var("x")),Var("x")) = Application(Func("y",Var("y")),Var("x"))
+alpha_convert (Application(Func("x",Var("x")),Var("x"))) = Application(Func("y",Var("y")),Var("x"))
 ```
 
 ### Compiler
