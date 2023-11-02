@@ -7,6 +7,7 @@
   + [Project 3](https://classroom.github.com/a/OEy95tyX) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project3.md))
   + [Project 4](https://classroom.github.com/a/eS6ORRAE) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project4.md))
   + [Project 5](https://classroom.github.com/a/4FOhv0xA) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project5.md))
+  + [Project 6](https://classroom.github.com/a/mki8hqkk) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project6.md))
 ### Discussion links
   + [Discussion 1](https://classroom.github.com/a/Gk3lXbAx)
   + [Discussion 2](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d2_hof_regex)
@@ -15,6 +16,8 @@
   + [Discussion 5](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d5_ocaml_typing)
   + [Discussion 6](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d6_ocaml_hof)
   + [Discussion 7](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d7_cfg)
+  + [Discussion 8](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d8_parsing)
+  + [Discussion 9](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d9_lambda_calc/README.md)
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
