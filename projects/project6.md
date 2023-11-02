@@ -3,6 +3,8 @@ Due: November 15th, 2023 at 11:59 pm
 
 Points: 35 public, 65 semipublic
 
+FAQ: [@1435](https://piazza.com/class/lkimk0rc39wfi/post/1435)
+
 ## Introduction
 
 In Project 6 you will implement an interpreter for Lambda calculus and an English-to-Lambda Calculus compiler.
@@ -397,6 +399,7 @@ To make things simpler, you can assume that any intial call to `reduce`, `eager`
     - `(Lz.(Lu.u) z)` -> we say that the argument itself is a Func, thus we cannot reduce the argument further
     - `((Ly.y) (Lz.z))` -> we say that we can reduce the inner application of the argument
     - **For this project, you should implement the second way**
+      - More on this here: [@1444](https://piazza.com/class/lkimk0rc39wfi/post/1444)
 - For expressions with nested lambdas and arguments, `laze` and `eager` should perform a beta reduction on the outermost expression first.
   - For an expression like `((Lx.((Ly.y) b)) ((Lz.z) c))`
   - `laze` should produce `((Ly.y) b)`
