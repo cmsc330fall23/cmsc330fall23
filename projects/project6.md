@@ -435,7 +435,7 @@ English | Church Encoding
 `true` | `(Lx.(Ly.x))`
 `false` | `(Lx.(Ly.y))`
 `if a then b else c` | `((a b) c)`
-`not a` | `((Lx.((x (Lx.(Ly.y))) (Lx.(Ly.x)))) a`
+`not a` | `((Lx.((x (Lx.(Ly.y))) (Lx.(Ly.x)))) a)`
 `a and b` | `(((Lx.(Ly.((x y) (Lx.(Ly.y))))) a) b)`
 `a or b` | `"(((Lx.(Ly.((x (Lx.(Ly.x))) y))) a) b)`
 
