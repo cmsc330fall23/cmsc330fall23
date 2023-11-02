@@ -456,9 +456,9 @@ English | Church Encoding
 - **Assumptions:** You may assume that the `lambda_ast` can be encoded using the above encodings. (eg. You will not be given something like `(Func("x",Var("y")))` since this is not a valid encoding)
 - **Examples** 
   ```ocaml
-  readable (Func("x", Func("y"), Var("x"))) = "true"
+  readable (Func("x", Func("y", Var("x")))) = "true"
 
-  readable (Func("y", Func("x"), Var("y"))) = "true"
+  readable (Func("y", Func("x", Var("y")))) = "true"
 
   let c1 = parse_lambda (lex_lambda "(((Lx.(Ly.x)) (Lx.(Ly.y)))(Lx.(Ly.x)))") in 
   readable c1 = "(if true then false else true)"
