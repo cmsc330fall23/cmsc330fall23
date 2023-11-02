@@ -280,6 +280,8 @@ For example, if we wanted to evaluate "let x = 3 in x + 1", then we probably wan
 In this case, we would want to call `eval [("x",Some(3)] "x + 1"`.
 Consider how this would change for our project.
 
+To make things simpler, you can assume that any intial call to `reduce`, `eager` and `laze` will always include the empty environment.
+
 #### `isalpha`
 - **Type:** `lambda_ast -> lambda_ast -> bool` 
 - **Description:** Returns true if the two inputs are alpha equivalent to each other, false otherwise. `fresh()` might prove to be useful here.
@@ -381,7 +383,7 @@ Consider how this would change for our project.
   eager [] (Application (Var("a"), Application (Func ("b", Var("b")), Var("y")))) = Application(Var("a"),Var("y"))
 
   (* (Lx.x) ((Ly.y) z) with environment [("z", Some(Var("f")))] = (Lx.x) ((Ly.y) f)*)
-  eager [("z", Some(Var("f")))] (Application(Func("x", Var("x")), Application(Func("y", Var("y")), Var("z")))) = Application(Func("x", Var("x")), Var("f"))
+  eager [("z", Some(Var("f")))] (Application(Func("x", Var("x")), Application(Func("y", Var("y")), Var("z")))) = Application(Func("x", Var("x")), Application(Func("y",Var("y")),Var("f")))
 
   (* ((Ly.y) ((Lz.(Lu.u) z))) = ((Ly.y) (Lz.z)) *)
   (* refer to Important Notes section for explanation *)
