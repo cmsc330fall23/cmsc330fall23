@@ -4,6 +4,7 @@ Due: November 15th, 2023 at 11:59 pm
 Points: 35 public, 65 semipublic
 
 FAQ: [@1435](https://piazza.com/class/lkimk0rc39wfi/post/1435)
+[Eval Addendum](./EVAL%20ADDENDUM.md)
 
 ## Introduction
 
