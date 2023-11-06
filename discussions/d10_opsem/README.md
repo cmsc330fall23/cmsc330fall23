@@ -19,11 +19,11 @@ The whole idea behind "operational semantics" is trying to _systematically_ unde
 
 ### Problem 1:
 
-<img width="765" alt="image" src="./opsem1.png">
+<img width="765" alt="image" src="./src/opsem1.png">
 
 ### Problem 2:
 
-<img width="765" alt="image" src="./opsem2.png">
+<img width="765" alt="image" src="./src/opsem2.png">
 
 ## Additional Readings & Resources
 
