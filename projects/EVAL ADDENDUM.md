@@ -4,11 +4,12 @@ Here is some operational semantics that you might find helpful for the functions
 
 ### `reduce`
 
-$\cfrac{A(x) = e}{A; x \Rightarrow e} \qquad \cfrac{A; e \Rightarrow e_1}{A;(Lx. e) \Rightarrow A;(Lx. e_1)} \qquad \cfrac{A;e_1 \Rightarrow e_3
+$\cfrac{A(x) = e}{A; x \Rightarrow e} \qquad \cfrac{A; e \Rightarrow e_1}{A;(Lx. e) \Rightarrow A;(Lx. e_1)} \qquad \cfrac{A;e_2 \Rightarrow e_3}{A;((Lx.\ e_1) \ e_2) \Rightarrow A, x:e_3;\ e_1} \qquad \cfrac{A;e_1 \Rightarrow e_3
 \qquad A;e_2 \Rightarrow e_4}{A;(e_1 \ e_2) \Rightarrow A;(e_3 \ e_4)}$ 
 
 - When evaluating a variable just return the value of the variable
 - When evaluating a function you want to evaluate the body first and then re-evaluate
+- If it is the application of an function and a variable, you want to extend the environment and then evaluate the body of the function with this newly extended environment. 
 - In any other application case we want to evaluate the two arguments separately and then re-evaluate them together
 
 ### `laze`
