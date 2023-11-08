@@ -1,0 +1,7 @@
+(library
+  (name r2)
+  (modules lexer parser interpreter failures)
+  (libraries str))
+(env
+  (dev
+      (flags (:standard -w -27-39-33-32))))
