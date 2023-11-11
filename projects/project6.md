@@ -468,7 +468,7 @@ English | Church Encoding
   readable c1 = "(if true then false else true)"
 
   let c2 = parse_lambda (lex_lambda "(((Lx.(Ly.((x y) (Lx.(Ly.y)))))(Lx.(Ly.x)))(Lx.(Ly.y)))")
-  readable c2 = "(false and true)" 
+  readable c2 = "(true and false)" 
   ```
 Below are the rules for spacing and parenthesis
 + Bools
