@@ -145,7 +145,7 @@ We first offer an overview of these functions, and then we discuss the AST and G
 ### `parse_lambda`
 - **Type:** `lambda_token list -> expr`
 - **Description:** Takes a list of tokens and returns an AST representing the expression corresponding to the given tokens. Use the CFG below to make your AST.
-- **Exceptions:** `raise (Failure "parsing failed")` or `raise (Failure "Empty input to lookahead")` or `raise (Failure "List was empty")` if the input fails to parse i.e does not match the expressions grammar.
+- **Exceptions:** `raise (Failure "parsing failed")` or `raise (Failure "Empty input to lookahead")` or `raise (Failure "List was empty")` or `raise (Failure "Token passed in does not match first token in list")` if the input fails to parse i.e does not match the expressions grammar.
 - **Examples** (more below):
   ```ocaml
   parse_lambda [Lambda_Var "a"; Lambda_EOF] = (Var "a")
@@ -165,7 +165,7 @@ We first offer an overview of these functions, and then we discuss the AST and G
 ### `parse_engl`
 - **Type:** `engl_token list -> engl_ast`
 - **Description:** Takes a list of `engl_token` and returns an AST representing the expression corresponding to the given tokens.
-- **Exceptions:** `raise (Failure "parsing failed")` or `raise (Failure "Empty input to lookahead")` or `raise (Failure "List was empty")` if the input fails to parse i.e does not match the expressions grammar.
+- **Exceptions:** `raise (Failure "parsing failed")` or `raise (Failure "Empty input to lookahead")` or `raise (Failure "List was empty")` or `raise (Failure "Token passed in does not match first token in list")`if the input fails to parse i.e does not match the expressions grammar.
 - **Examples**
   ```ocaml
   parse_engl [Engl_True; Engl_EOF] = (Bool true)
