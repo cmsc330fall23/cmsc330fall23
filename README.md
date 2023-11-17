@@ -20,6 +20,7 @@
   + [Discussion 8](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d8_parsing)
   + [Discussion 9](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d9_lambda_calc)
   + [Discussion 10](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d10_opsem)
+  + [Discussion 11](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d11_rust)
 ### Other links
 
  + [Lecture code](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/lecture_code)
