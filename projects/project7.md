@@ -21,29 +21,13 @@ behavior of the classic `wc` UNIX utility: it counts the characters,
 words, and lines in an input file. This will give a chance to build a
 command line program and deal with basic file input in Rust.
 
-## Directory Structure
-Cloning the provided git repository should set your directory
-structure up appropriately. Rust uses a build automation system called
-**Cargo** which makes dictates some aspects of project layout The
-standard directory structure of Rust projects is outlined in the
-[Official Cargo Docs](https://doc.rust-lang.org/cargo/guide/project-layout.html)
-and is roughly
-
-| File                         | Description                                |
-|------------------------------|--------------------------------------------|
-| `project/`                   | Root project directory called a *Crate*    |
-| `project/Cargo.toml`         | Options for the project                    |
-| `project/src/lib.rs`         | Library functions                          |
-| `project/src/other.rs`       | Other functions in the library             |
-| `project/src/bin/program.rs` | Executable program to build                |
-| `project/test/sometests.rs`  | Testing file to run unit/integration tests |
-
 ## Code Pack Files
 The following files are distributed in the codepack.
 
 | File                  | State    | Description                                |
 |-----------------------|----------|--------------------------------------------|
 | `project7/`           | Provided | Project root                               |
+| `Makefile`            | Provided | Supplementary build file, try `make help`  |
 | `Cargo.toml`          | Provided | Options for the project                    |
 | `README.md`           | Provided | Project description                        |
 |                       |          |                                            |
@@ -54,13 +38,15 @@ The following files are distributed in the codepack.
 | `src/bin/readfile.rs` | Provided | Sample file demoing file reading           |
 |                       |          |                                            |
 | `tests/test_prob1.rs` | Testing  | Unit Tests for Problem 1                   |
+|                       |          | Try `make test-prob1`                      |
+| `test_prob2_wc.sh`    | Testing  | Overview testing script for Problem 2      |
+|                       |          | Try `make test-prob2`                      |
+|                       |          |                                            |
 | `test_prob1.org`      | Testing  | Point totaling for Problem 1               |
 | `test_prob2.org`      | Testing  | Point totaling for Problem 2               |
 | `test_post_filter`    | Testing  | Used during points tallying                |
 | `test-data/*`         | Testing  | Test input files                           |
 | `testy`               | Testing  | Testing framework for totaling scores      |
-| `Makefile`            | Testing  | Supplementary build file                   |
-
 
 ## Cargo Commands
 The standard method to build and run tests with Rust's Cargo tool is
@@ -100,50 +86,56 @@ may need to install. A demo:
 Typical usage is:
   > make                          # build all programs
   > make test                     # run all tests
+  > make test-prob1               # run test for problem 1
   > make test-prob2               # run test for problem 2
-  > make test-prob2 testnum=5     # run problem 2 test #5 only
+  > make clean-tests              # remove test-results/ directory
+  > make clean                    # remove build files
+
+LINUX ONLY (makes use of testy script which fails on MacOS
+  > make ltest                    # run all tests and show scores, linux only
+  > make ltest-prob1              # run problem 1 tests and show score, linux only
+  > make ltest-prob2              # run problem 2 tests and show score, linux only
+  > make ltest-prob2 testnum=5    # run problem 2 test #5 only, linux only
 
 >> make test-prob1
 cargo build
-   Compiling project7 v0.1.0 (/home/kauffman/Dropbox/teaching/330-F2023/projects/p7-rust/p7)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.82s
-cargo test --no-run			#build test programs
-   Compiling project7 v0.1.0 (/home/kauffman/Dropbox/teaching/330-F2023/projects/p7-rust/p7)
-    Finished test [unoptimized + debuginfo] target(s) in 0.88s
-  Executable unittests src/lib.rs (target/debug/deps/project7-45ebb77fdf184b31)
-  Executable unittests src/bin/prob2_wc.rs (target/debug/deps/prob2_wc-065d0a1f65bc6a03)
-  Executable tests/test_prob1.rs (target/debug/deps/test_prob1-7c1ed0b0312b59c1)
-./testy test_prob1.org 
-============================================================
-== test_prob1.org : Problem 1 Basic Functions
-== Running 16 / 16 tests
-1)  test_gauss1          : ok
-2)  test_gauss2          : ok
-3)  test_in_range1       : ok
-4)  test_in_range2       : ok
-5)  test_mean1           : ok
-6)  test_mean2           : ok
-7)  test_subset1         : ok
-8)  test_subset2         : ok
-9)  test_to_binstring1   : ok
-10) test_to_binstring2   : ok
-11) test_circulant1      : FAIL -> results in file 'test-results/prob1-11-result.tmp'
-12) test_circulant2      : FAIL -> results in file 'test-results/prob1-12-result.tmp'
-13) test_circulant3      : FAIL -> results in file 'test-results/prob1-13-result.tmp'
-14) test_circulant4      : FAIL -> results in file 'test-results/prob1-14-result.tmp'
-15) test_count_words1    : ok
-16) test_count_words2    : ok
-============================================================
-RESULTS: 45 / 65 point earned
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+cargo test --test test_prob1
+    Finished test [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/test_prob1.rs (target/debug/deps/test_prob1-8c4fed3e3a54c66a)
+
+running 16 tests
+test test_circulant1 ... ok
+test test_circulant2 ... ok
+test test_circulant3 ... ok
+...
+test test_count_words1 ... ok
+test test_count_words2 ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+>> make test-prob2
+./test_prob2_wc.sh
+
+=============== PROBLEM 2 TESTS ===============
+BUILDING PROGRAMS
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+...
+EXPECTED AND ACTUAL OUTPUT DIFFER, TEST FAILURES LIKELY
+Examine the above side-by-side diff, look for | < > symbols
+in the middle which indicate differnces between the Expected
+and Actual output
 ```
 
-The command `make test-prob` will build and run tests for problem 1
+The command `make test-prob1` will build and run tests for problem 1
 and report the point totals for it. Likewise `make test-prob2` will
 test problem 2 and `make test` will run all tests.
 
-When failures result, a file with information on the cause of the
-failure is created and indicated on the test command line. Test
-results files can be safely ignored or removed via `make clean-tests`.
+On Linux systems, you may also run `make ltest` to run all tests just
+as they would on Gradescope which will show your overall scores for
+Problems 1 and 2 along with additional information on test
+failures. Unfortunately MacOS and Windows cmd.exe are incompatible
+with the scripts used for this.
 
 ## Ground Rules
 As before, this is an individual assignment. You only receive help on
