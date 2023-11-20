@@ -556,6 +556,30 @@ function, but the similarities are enough.
 Once this you have access to your function from problem 1, use it to
 count words on each line that is read.
 
+## Counting Characters
+**Added Mon Nov 20 05:39:37 PM EST 2023**
+
+Traditionally character counts corresponded directly to byte
+counts. In this interpretation a multi-byte unicode character would
+count as multiple characters. Rust’s `string.len()` function returns
+the total bytes in the string.
+
+Multi-byte characters may instead be counted as a single character
+which is the behavior of Rust’s `string.chars().count()` function.
+
+Implementations of `prob2_wc` **should favor `string.len()`** to count
+the total bytes (characters) of the string. This is the “right”
+behavior based on mimicking the original `wc` utility’s behavior which
+counts the total bytes.
+
+Details of character vs byte counts for multi-byte characters are
+described in Rust's documentation of the `String` data type:
+https://doc.rust-lang.org/std/string/struct.String.html#utf-8
+
+A number of students encountered this issue and reported the
+difference in behavior in [Piazza Post
+1929](https://piazza.com/class/lkimk0rc39wfi/post/1929).
+
 ## Output Formatting
 After counting lines, words, and characters. Print a message at the
 end of the program indicating the counts and the filename like the
