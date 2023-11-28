@@ -143,10 +143,10 @@ the project from staff members associated with the course.
 
 Generally you may use functionality in Rust's standard library and the
 external Regex crate which will be downloaded as part of the first
-project build. However, use of an existing function or package that
+project build. ~~However, use of an existing function or package that
 would complete a required function or program in with no effort from
 the student is prohibited under penalty of loss of all credit on the
-project.  That is: do the work.
+project.  That is: do the work.~~ (We haven't found any library functions that would be prohibited - don't stress it).
 
 Guidance is given on techniques to use in each of the problems so keep
 a copy of the README close.
