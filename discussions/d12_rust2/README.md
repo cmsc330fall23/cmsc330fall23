@@ -6,6 +6,21 @@
   - Regrades open until **11:59 PM tomorrow, December 2nd**
 - Quiz 4 next **Friday, December 8th**
 
+## A Haiku
+
+> _Rust's language, robust,_ \
+> _Threads of safety intertwine,_ \
+> _Code weaves strong and fine._ \
+> ~ ChatGPT 3.5
+
+## A Limerick
+
+> _structs are just structs_ \
+> _impl are functions for structs_ \
+> _traits are just a group of functions_ \
+> _you can assign traits to structs_ \
+> ~ dp
+
 ## Resources
 
 - [Rust Book - Defining and Instantiating Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
