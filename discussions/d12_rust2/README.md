@@ -5,6 +5,8 @@
 - Exam 2 grades & solutions posted: [@2017](https://piazza.com/class/lkimk0rc39wfi/post/2017)
   - Regrades open until **11:59 PM tomorrow, December 2nd**
 - Quiz 4 next **Friday, December 8th**
+- Final Exam **Wednesday, December 13th**
+  - Details TBD (check Piazza)
 
 ## A Haiku
 
