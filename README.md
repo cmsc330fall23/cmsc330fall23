@@ -9,7 +9,7 @@
   + [Project 5](https://classroom.github.com/a/4FOhv0xA) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project5.md))
   + [Project 6](https://classroom.github.com/a/mki8hqkk) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project6.md))
   + [Project 7](https://classroom.github.com/a/En4-7dYT) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project7.md))
-  + [Project 8](https://www.youtube.com/watch?v=D2_r4q2imnQ) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project8.md))
+  + [Project 8](https://classroom.github.com/a/T4cOs7CC) ([README](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/projects/project8.md))
 ### Discussion links
   + [Discussion 1](https://classroom.github.com/a/Gk3lXbAx)
   + [Discussion 2](https://github.com/cmsc330fall23/cmsc330fall23/blob/main/discussions/d2_hof_regex)
