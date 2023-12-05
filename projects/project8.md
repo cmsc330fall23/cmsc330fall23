@@ -409,7 +409,7 @@ impl Corrector for MarkCorrector {
   /// mc.correct_word("blergh") -> ">>BLERGH<<"
   /// 
   /// let mut mc = MarkCorrector::new("","!fixme");
-  /// mc.correct_word("incorrect") -> "INCORRECT!fixme:"
+  /// mc.correct_word("incorrect") -> "INCORRECT!fixme"
   /// mc.correct_word("blergh") -> "BLERGH!fixme"
 }
 ```
