@@ -201,7 +201,7 @@ dictionary (Vector of Strings) and marks them as in need of
 correction. The essence of this is something like
 ```text
 mark_corrected("this iz a mizsplled word",dictioary") 
-            -> "this **iz** a **mizsplled** word"
+            -> "this **IZ** a **MIZSPLLED** word"
 ```
 where the resulting string has all words not in the dictionary marked
 up. Some implementation details appear below the synopsis.
